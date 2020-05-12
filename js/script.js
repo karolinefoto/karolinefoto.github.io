@@ -23,14 +23,13 @@ function loadPhotos()
 
 function loadImages()
 {
-  var u = 1;
   var i = 0;
   while (i < 10) {
     var photo = document.createElement('div');
     photo.setAttribute("class", "photo");
-    photo.innerHTML = "Photo " + u
+    photo.innerHTML = "Photo " + nr
     document.getElementById("photos").appendChild(photo);
-    u++;
+    nr++;
     i++;
   }
 }
