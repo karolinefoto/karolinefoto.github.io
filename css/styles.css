@@ -1,7 +1,7 @@
 
 html
 {
-  height: 100vh;
+
 }
 
 body
@@ -148,15 +148,27 @@ nav
 
 #photos
 {
-  display: block;
-  position: fixed;
+  display: flex;
+  /*position: fixed;*/
   left: 0px;
-  top: 80px;
+  margin-top: 80px;
   width: calc(100% - 360px);
   height: auto;
   min-height: 100px;
   background: #ccc;
   border: 4px;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.photo
+{
+  margin: 8px;
+  width: 240px;
+  height: 160px;
+  background: white;
+  border-radius: 4px;
+  color: black;
 }
 
 .top-padding
