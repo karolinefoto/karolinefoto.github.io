@@ -25,10 +25,11 @@ function loadImages()
   while (i < 10) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
-    box.setAttribute("class", "photo");
+    box.setAttribute("class", "photo-box");
     box.setAttribute("id", "img" + nr);
     photo.setAttribute("src", "photos/img" + nr +".jpg");
-    box.innerHTML = "Photo " + nr
+    photo.setAttribute("class", "photo");
+    
     document.getElementById("photos").appendChild(box);
     document.getElementById("img" + nr).appendChild(photo);
     nr++;
