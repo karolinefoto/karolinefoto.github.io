@@ -1,0 +1,339 @@
+
+html
+{
+  height: 100vh;
+}
+
+body
+{
+    /*background-image: linear-gradient(#424242, #212121);*/
+}
+
+* {
+  outline: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+h1
+{
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 8px;
+  font-size: 40px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h2
+{
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 6px;
+  font-size: 30px;
+  line-height: 30px;
+  height: 30px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h3
+{
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 4px;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h6
+{
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 8px;
+  font-size: 60px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+p
+{
+  padding: 3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px;
+  font-size: 24px;
+  font-family: 'Average', serif;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+.vertical
+{
+  text-decoration: none;
+  writing-mode: vertical-rl;
+}
+
+.c-rl
+{
+  position: relative;
+  margin-right: 4px;
+  float: right;
+}
+
+#c-important
+{
+  font-size: 32px;
+}
+
+.turnable
+{
+  transition: 0.15s;
+}
+
+.turnable:active
+{
+  transform: rotateZ(180deg);
+}
+
+.clickable
+{
+  transition: 0.2s;
+}
+
+.clickable:hover
+{
+  transform: scale(1.01);
+}
+
+.c-image
+{
+  height: calc(100% - 82px);
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+.c-text
+{
+  margin-left: 0px;
+  text-align: center;
+}
+
+.text-ud
+{
+  transform: rotateZ(180deg);
+}
+
+.question
+{
+  display: block;
+}
+
+.c:active .question
+{
+  display: none;
+}
+
+.answer
+{
+  display: none;
+}
+
+.c:active .answer
+{
+  display: block;
+}
+
+.c-text-box
+{
+  height: 80px;
+  background-size: 100% 80px;
+  padding-top: 4px;
+}
+
+.group-left
+{
+  float: left;
+  width: 50%;
+}
+
+.group-right
+{
+  float: right;
+  width: 50%;
+}
+
+.c-left
+{
+  float: left;
+}
+
+.c-right
+{
+  float: right;
+}
+
+.c-japan
+{
+  background-image: url();
+  background-size: 100% auto;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.c-t9
+{
+  background-image: url("../images/t9.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.c-old
+{
+  background-image: url("../images/old.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.c-twitter
+{
+  background-image: url("../images/Twitter_Logo_Blue.svg");
+  background-size: 40% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.c
+{
+  width: calc(50% - 8px);
+  height: 400px;
+  border-width: 4px;
+  margin: 4px;
+  overflow: hidden;
+}
+
+.c-short
+{
+  height: 90px;
+}
+
+.c-medium
+{
+  height: 270px;
+}
+
+.c-tall
+{
+  height: 540px;
+}
+
+.c-thin
+{
+  width: calc(25% - 8px);
+}
+
+#header
+{
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(to right, #a27 0%, #289 100%);
+  box-shadow: 0px 0px 8px black;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+
+.header-box
+{
+  height: 83px;
+}
+
+.header-title
+{
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+
+.header-subtitle
+{
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.header-button-back
+{
+  height: 55px;
+  width: 120px;
+  display: block;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+}
+
+.header-button-copyright
+{
+  height: 55px;
+  width: 120px;
+  display: block;
+  position: fixed;
+  top: 12px;
+  right: 12px;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.upright
+{
+  text-orientation: upright;
+  text-transform: full-width;
+}
+
+.logo-text
+{
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 1px white;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.button-transparent
+{
+  background: none;
+  background-image: none;
+  border: none;
+}
+
+button
+{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  height: 48px;
+}
+
+button span
+{
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.span-text-margin
+{
+  margin-block-start: 80px;
+  margin-right: 4px;
+}
