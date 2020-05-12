@@ -6,15 +6,17 @@ function wait(ms)
   while (d2-d < ms);
 }
 
+var nr = 1;
+
 function loadPhotos()
 {
   var photo = document.createElement('div');
-  var u = 1;
+
 
   photo.setAttribute("class", "photo");
-  photo.innerHTML = "Photo " + u
+  photo.innerHTML = "Photo " + nr
   document.getElementById("photos").appendChild(photo);
-  u++;
+  nr++;
 }
 
 
