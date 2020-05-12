@@ -6,7 +6,7 @@ html
 
 a
 {
-  color: #EEEEEE;
+  color: black;
 }
 
 #c-important
@@ -38,7 +38,7 @@ a
 #header
 {
   background-image: linear-gradient(to right, #fab 0%, #fff 100%);
-  box-shadow: 0px 0px 8px black;
+  box-shadow: 0px 0px 4px black;
 }
 
 .header-title
@@ -65,22 +65,22 @@ a
 
 button
 {
-  border-radius: 3px;
+  border-radius: 4px;
   border-color: #fff;
-  background-image: linear-gradient(#e9a, #c89);
+  background-image: linear-gradient(#e9a, #d89);
   color: white;
 }
 
 button:hover
 {
-  background: #fff;
-  border-color: #eee;
+  background: #eee;
+  border-color: #ddd;
   color: black;
 }
 
 button:active
 {
-  background: black;
-  border-color: white;
-  color: white;
+  background: #ddd;
+  border-color: #ccc;
+  color: black;
 }
