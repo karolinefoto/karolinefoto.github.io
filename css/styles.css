@@ -159,13 +159,14 @@ nav
   border: 4px;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .photo-box
 {
   margin: 8px;
   width: 240px;
-  height: 160px;
+  height: auto;
   background: white;
   border-radius: 4px;
   color: black;
@@ -177,7 +178,7 @@ nav
 {
   display: block;
   width: 100%;
-  
+
 }
 
 .top-padding

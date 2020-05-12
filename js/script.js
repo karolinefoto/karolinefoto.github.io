@@ -17,7 +17,46 @@ function loadPhotos()
   nr++;
 }
 
+/*
+function scanImages()
+{
+  var i = 0;
+  var nameString = "photos/img" + nr;
+  var filename = nameString.split("/").pop();
+  if (filename ) {
 
+  }
+  $.ajax(
+  {
+    url:''
+    type:'HEAD'
+    error: function()
+    {
+
+    },
+    success: function()
+    {
+
+  }
+  }
+  );
+}
+*/
+
+function imageExist(url)
+{
+  var img = new Image();
+  img.src = url;
+  return img.height != 0;
+}
+
+function scanImages()
+{
+  var i = 0;
+  var nameString = "photos/img" + nr;
+  var filename = nameString.split("/").pop();
+  
+}
 
 function loadImages()
 {
@@ -29,7 +68,7 @@ function loadImages()
     box.setAttribute("id", "img" + nr);
     photo.setAttribute("src", "photos/img" + nr +".jpg");
     photo.setAttribute("class", "photo");
-    
+
     document.getElementById("photos").appendChild(box);
     document.getElementById("img" + nr).appendChild(photo);
     nr++;
