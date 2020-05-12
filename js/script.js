@@ -9,11 +9,15 @@ function wait(ms)
 function loadPhotos()
 {
   var photo = document.createElement('div');
+  var u = 1;
 
   photo.setAttribute("class", "photo");
-  photo.innerHTML = "Photo 1"
+  photo.innerHTML = "Photo " + u
   document.getElementById("photos").appendChild(photo);
+  u++;
 }
+
+
 
 function loadImages()
 {
