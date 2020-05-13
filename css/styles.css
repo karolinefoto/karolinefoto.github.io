@@ -155,7 +155,7 @@ nav
   width: calc(100% - 360px);
   height: auto;
   min-height: 100px;
-  background: #ccc;
+  background: #ee;
   border: 4px;
   flex-flow: row wrap;
   justify-content: center;
