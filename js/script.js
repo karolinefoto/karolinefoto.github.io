@@ -76,10 +76,10 @@ function scanImages()
 }
 */
 
-var numberOfPicturesStemning = 1;
-var numberOfPicturesNatur = 3;
-var numberOfPicturesDyr = 2;
-var numberOfPicturesPortrett = 0;
+var numberOfPicturesStemning = 32;
+var numberOfPicturesNatur = 53;
+var numberOfPicturesDyr = 46;
+var numberOfPicturesPortrett = 7;
 
 function removeImages()
 {
@@ -96,7 +96,7 @@ function loadImagesStemning()
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "imgStemning" + nr);
-    photo.setAttribute("src", "photos/stemning/img" + nr +".jpg");
+    photo.setAttribute("src", "photos/stemning/ste" + nr +".jpg");
     photo.setAttribute("class", "photo");
 
     document.getElementById("photos").appendChild(box);
@@ -121,7 +121,7 @@ function loadImagesNatur()
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "imgNatur" + nr);
-    photo.setAttribute("src", "photos/natur/img" + nr +".jpg");
+    photo.setAttribute("src", "photos/natur/nat" + nr +".jpg");
     photo.setAttribute("class", "photo");
 
     document.getElementById("photos").appendChild(box);
@@ -146,7 +146,7 @@ function loadImagesDyr()
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "imgDyr" + nr);
-    photo.setAttribute("src", "photos/dyr/img" + nr +".jpg");
+    photo.setAttribute("src", "photos/dyr/dyr" + nr +".jpg");
     photo.setAttribute("class", "photo");
 
     document.getElementById("photos").appendChild(box);
@@ -171,7 +171,7 @@ function loadImagesPortrett()
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "imgPortrett" + nr);
-    photo.setAttribute("src", "photos/portrett/img" + nr +".jpg");
+    photo.setAttribute("src", "photos/portrett/por" + nr +".jpg");
     photo.setAttribute("class", "photo");
 
     document.getElementById("photos").appendChild(box);

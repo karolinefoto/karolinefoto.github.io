@@ -446,6 +446,11 @@ button
   height: 48px;
 }
 
+button:focus
+{
+  outline: 0;
+}
+
 button span
 {
   display: block;
