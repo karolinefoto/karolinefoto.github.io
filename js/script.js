@@ -200,3 +200,19 @@ function showAll()
   removeImages();
   loadImagesAll();
 }
+
+function imageViewer()
+{
+  var viewer = document.createElement('div');
+  var button1 = document.createElement('button');
+  var button2 = document.createElement('button');
+  var button3 = document.createElement('button');
+  viewer.setAttribute("id", "viewer");
+  button1.setAttribute("id", "viewer-prev");
+  button2.setAttribute("id", "viewer-close");
+  button3.setAttribute("id", "viewer-next");
+  document.body.appendChild(viewer);
+  document.getElementById("viewer").appendChild(button1);
+  document.getElementById("viewer").appendChild(button2);
+  document.getElementById("viewer").appendChild(button3);
+}
