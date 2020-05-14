@@ -173,7 +173,9 @@ nav
   min-height: 600px;
   background-color: rgba(0,0,0,.5);
   justify-content: center;
+  align-items: center;
   border-radius: 3px;
+  flex-direction: column;
 }
 
 #viewer-next
@@ -211,6 +213,23 @@ nav
   margin-left: 0;
   margin-right: 0;
   border-radius: 0px;
+}
+
+#image-view
+{
+  display: flex;
+  height: auto;
+  width: auto;
+  padding: 20px;
+}
+
+.image-viewer-child
+{
+  display: flex;
+  max-height: 80vh;
+  max-width: 80vh;
+  justify-content: center;
+  align-self: flex-end;
 }
 
 .photo-box

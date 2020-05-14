@@ -140,7 +140,7 @@ function showNatur()
 function loadImagesDyr()
 {
   var i = 0;
-  var nr =1;
+  var nr = 1;
   while (i < numberOfPicturesDyr) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
@@ -162,6 +162,8 @@ function showDyr()
   loadImagesDyr();
 }
 
+//var x = 0;
+
 function loadImagesPortrett()
 {
   var i = 0;
@@ -169,13 +171,21 @@ function loadImagesPortrett()
   while (i < numberOfPicturesPortrett) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
+    var source = "photos/portrett/por";
+    var jpg = ".jpg";
+
+    /*var imgURL = document.querySelector('img.something').src;  */
     box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "imgPortrett" + nr);
-    photo.setAttribute("src", "photos/portrett/por" + nr +".jpg");
+    box.setAttribute("id", "boxPortrett" + nr);
+    photo.setAttribute("src", source + nr + jpg);
     photo.setAttribute("class", "photo");
+    photo.setAttribute("id", "imgPortrett" + nr);
+
 
     document.getElementById("photos").appendChild(box);
-    document.getElementById("imgPortrett" + nr).appendChild(photo);
+    document.getElementById("boxPortrett" + nr).appendChild(photo);
+//    x == document.getElementById("imgPortrett" + nr).src;
+    photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
   }
@@ -201,18 +211,54 @@ function showAll()
   loadImagesAll();
 }
 
-function imageViewer()
+function clickImage()
+{
+  getElementById();
+}
+
+function imageViewer(inputImage)
 {
   var viewer = document.createElement('div');
+  var buttonBox = document.createElement('div');
   var button1 = document.createElement('button');
   var button2 = document.createElement('button');
   var button3 = document.createElement('button');
+  var imageView = document.createElement('div');
+  var imageViewChild = document.createElement('img');
   viewer.setAttribute("id", "viewer");
+  buttonBox.setAttribute("id", "button-box");
   button1.setAttribute("id", "viewer-prev");
+  button1.setAttribute("onclick", "prevImage();")
   button2.setAttribute("id", "viewer-close");
+  button2.setAttribute("onclick", "closeViewer();")
   button3.setAttribute("id", "viewer-next");
+  button3.setAttribute("onclick", "nextImage();")
+  imageView.setAttribute("id", "image-view");
+  imageViewChild.setAttribute("class", "image-viewer-child");
+  imageViewChild.setAttribute("src", inputImage);
+
   document.body.appendChild(viewer);
-  document.getElementById("viewer").appendChild(button1);
-  document.getElementById("viewer").appendChild(button2);
-  document.getElementById("viewer").appendChild(button3);
+  document.getElementById("viewer").appendChild(buttonBox);
+  document.getElementById("button-box").appendChild(button1);
+  document.getElementById("button-box").appendChild(button2);
+  document.getElementById("button-box").appendChild(button3);
+  document.getElementById("viewer").appendChild(imageView);
+  document.getElementById("image-view").appendChild(imageViewChild);
+}
+
+function closeViewer()
+{
+  const viewer = document.getElementById("viewer");
+  viewer.parentNode.removeChild(viewer);
+  return false;
+}
+
+function nextImage()
+{
+  nr++;
+}
+
+function prevImage()
+{
+  nr--;
 }
