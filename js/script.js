@@ -104,6 +104,7 @@ function loadImagesStemning() {
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxStemning" + u);
+    box.setAttribute("focusable", "0");
     photo.setAttribute("src", "photos/stemning/ste" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgStemning" + u);
@@ -134,6 +135,7 @@ function loadImagesNatur() {
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxNatur" + u);
+    box.setAttribute("focusable", "0");
     photo.setAttribute("src", "photos/natur/nat" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgNatur" + u);
@@ -165,6 +167,7 @@ function loadImagesDyr() {
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxDyr" + u);
+    box.setAttribute("focusable", "0");
     photo.setAttribute("src", "photos/dyr/dyr" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgDyr" + u);
@@ -200,6 +203,7 @@ function loadImagesPortrett() {
     var jpg = ".jpg";
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxPortrett" + u);
+    box.setAttribute("focusable", "0");
     photo.setAttribute("src", source + u + jpg);
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgPortrett" + u);
@@ -252,7 +256,6 @@ function imageViewer(inputImage) {
   imageView.setAttribute("id", "image-view");
   imageViewChild.setAttribute("id", "image-viewer-child");
   imageViewChild.setAttribute("src", inputImage);
-
   document.body.appendChild(viewer);
   document.getElementById("viewer").appendChild(buttonBox);
   document.getElementById("button-box").appendChild(button1);

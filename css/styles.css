@@ -83,8 +83,9 @@ li a
 ul
 {
   list-style: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
 
 }
 
@@ -155,7 +156,7 @@ nav
   width: calc(100% - 360px);
   height: auto;
   min-height: 100px;
-  background: #ee;
+  background: #eee;
   border: 4px;
   flex-flow: row wrap;
   justify-content: center;
@@ -171,10 +172,20 @@ nav
   right: 0px;
   height: 100%;
   min-height: 600px;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,0.97);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#background
+{
+  filter: blur(4px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 #viewer-next
@@ -220,27 +231,49 @@ nav
   height: auto;
   width: auto;
   padding: 20px;
+  align-items: flex-start;
 }
 
 #image-viewer-child
 {
   display: flex;
-  max-height: 80vh;
-  max-width: 80vh;
+  max-height: 75vh;
+  max-width: 90vw;
   justify-content: center;
-  align-self: flex-end;
+  align-self: flex-start;
+}
+
+#button-box
+{
+  display: flex;
+  position: fixed;
+  top: 100px;
 }
 
 .photo-box
 {
   margin: 8px;
-  width: 240px;
+  width: 360px;
   height: auto;
   background: white;
   border-radius: 4px;
   color: black;
   overflow: hidden;
   box-shadow: 0px 0px 2px grey;
+  transform: scale(1);
+  transition-duration: 200ms;
+}
+
+.photo-box:focus
+{
+  transform: scale(1.01);
+  transition-duration: 200ms;
+}
+
+.photo-box:hover
+{
+  transform: scale(1.01);
+  transition-duration: 200ms;
 }
 
 .photo
@@ -253,6 +286,29 @@ nav
 .top-padding
 {
   padding: 40px;
+}
+
+.nav-left
+{
+  margin-right: 0;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.nav-center
+{
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.nav-right
+{
+  margin-right: 0;
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .inline
