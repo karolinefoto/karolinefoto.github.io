@@ -223,7 +223,7 @@ nav
   padding: 20px;
 }
 
-.image-viewer-child
+#image-viewer-child
 {
   display: flex;
   max-height: 80vh;

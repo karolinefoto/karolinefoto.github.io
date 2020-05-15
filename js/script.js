@@ -7,7 +7,7 @@ function wait(ms)
   while (d2-d < ms);
 }
 
-//var nr = 1;
+
 
 function loadPhotos()
 {
@@ -75,6 +75,7 @@ function scanImages()
   }
 }
 */
+var nr = 1;
 
 var numberOfPicturesStemning = 32;
 var numberOfPicturesNatur = 53;
@@ -90,7 +91,7 @@ function removeImages()
 function loadImagesStemning()
 {
   var i = 0;
-  var nr = 1;
+  nr = 1;
   while (i < numberOfPicturesStemning) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
@@ -115,7 +116,7 @@ function showStemning()
 function loadImagesNatur()
 {
   var i = 0;
-  var nr = 1;
+  nr = 1;
   while (i < numberOfPicturesNatur) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
@@ -140,7 +141,7 @@ function showNatur()
 function loadImagesDyr()
 {
   var i = 0;
-  var nr = 1;
+  nr = 1;
   while (i < numberOfPicturesDyr) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
@@ -167,7 +168,7 @@ function showDyr()
 function loadImagesPortrett()
 {
   var i = 0;
-  var nr = 1;
+  nr = 1;
   while (i < numberOfPicturesPortrett) {
     var box = document.createElement('div');
     var photo = document.createElement('img');
@@ -234,7 +235,7 @@ function imageViewer(inputImage)
   button3.setAttribute("id", "viewer-next");
   button3.setAttribute("onclick", "nextImage();")
   imageView.setAttribute("id", "image-view");
-  imageViewChild.setAttribute("class", "image-viewer-child");
+  imageViewChild.setAttribute("id", "image-viewer-child");
   imageViewChild.setAttribute("src", inputImage);
 
   document.body.appendChild(viewer);
@@ -244,6 +245,9 @@ function imageViewer(inputImage)
   document.getElementById("button-box").appendChild(button3);
   document.getElementById("viewer").appendChild(imageView);
   document.getElementById("image-view").appendChild(imageViewChild);
+
+
+
 }
 
 function closeViewer()
@@ -255,10 +259,45 @@ function closeViewer()
 
 function nextImage()
 {
-  nr++;
+  var imageViewChild = document.getElementById("image-viewer-child");
+  var oldSrc = imageViewChild.getAttribute("src");
+  var oldNr = oldSrc.slice(-5 ,-4);
+  console.log(oldSrc);
+  console.log(oldNr);
+  var newNr = Number(oldNr);
+  if (newNr >= numberOfPicturesPortrett)
+  {
+    newNr = 1;
+  }
+  else
+  {
+    newNr++;
+  }
+
+  console.log("newNr = " + newNr);
+  var newSrc = oldSrc.replace(oldNr, newNr);
+  imageViewChild.setAttribute("src", newSrc);
 }
 
 function prevImage()
 {
-  nr--;
+  var imageViewChild = document.getElementById("image-viewer-child");
+  var oldSrc = imageViewChild.getAttribute("src");
+  var oldNr = oldSrc.slice(-5 ,-4);
+  console.log(oldSrc);
+  console.log(oldNr);
+  var newNr = Number(oldNr);
+  if (newNr <= 1)
+  {
+    newNr = numberOfPicturesPortrett;
+  }
+  else
+  {
+    newNr--;
+  }
+
+
+  console.log("newNr = " + newNr);
+  var newSrc = oldSrc.replace(oldNr, newNr);
+  imageViewChild.setAttribute("src", newSrc);
 }
