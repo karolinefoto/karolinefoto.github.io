@@ -166,7 +166,7 @@ nav
   border: 4px;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
 #viewer
@@ -266,19 +266,18 @@ nav
   color: black;
   overflow: hidden;
   box-shadow: 0px 0px 2px grey;
-  transform: scale(1);
+  border: none;
   transition-duration: 200ms;
 }
 
 .photo-box:focus
 {
-  transform: scale(1.01);
   transition-duration: 200ms;
 }
 
 .photo-box:hover
 {
-  transform: scale(1.01);
+  border: black 2px;
   transition-duration: 200ms;
 }
 
@@ -286,7 +285,6 @@ nav
 {
   display: block;
   width: 100%;
-
 }
 
 .top-padding
@@ -416,77 +414,6 @@ nav
 {
   float: right;
   width: 50%;
-}
-
-.c-left
-{
-  float: left;
-}
-
-.c-right
-{
-  float: right;
-}
-
-.c-japan
-{
-  background-image: url();
-  background-size: 100% auto;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
-.c-t9
-{
-  background-image: url("../images/t9.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.c-old
-{
-  background-image: url("../images/old.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.c-twitter
-{
-  background-image: url("../images/Twitter_Logo_Blue.svg");
-  background-size: 40% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.c
-{
-  width: calc(50% - 8px);
-  height: 400px;
-  border-width: 4px;
-  margin: 4px;
-  overflow: hidden;
-}
-
-.c-short
-{
-  height: 90px;
-}
-
-.c-medium
-{
-  height: 270px;
-}
-
-.c-tall
-{
-  height: 540px;
-}
-
-.c-thin
-{
-  width: calc(25% - 8px);
 }
 
 #header

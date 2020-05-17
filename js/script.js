@@ -236,6 +236,8 @@ function clickImage() {
   getElementById();
 }
 
+
+
 function imageViewer(inputImage) {
   document.addEventListener("keyup", keyPress);
   var viewer = document.createElement('div');
@@ -264,7 +266,6 @@ function imageViewer(inputImage) {
   document.getElementById("viewer").appendChild(imageView);
   document.getElementById("image-view").appendChild(imageViewChild);
   var viewerObj = document.getElementById("viewer");
-
   viewerObj.focus();
 
 }
@@ -274,7 +275,6 @@ function closeViewer()
   const viewer = document.getElementById("viewer");
   viewer.parentNode.removeChild(viewer);
   document.body.focus();
-  //return false;
   document.getElementById("viewer").document.removeEventListener("keyup", keyPress);
 }
 
@@ -312,9 +312,6 @@ function nextImage()
   if (newNr < 10) {
     newNr = pad(newNr);
   }
-
-
-
   console.log("newNr = " + newNr);
   var newSrc = oldSrc.replace(oldNr, newNr);
   imageViewChild.setAttribute("src", newSrc);
@@ -379,16 +376,3 @@ function keyPress() {
     closeViewer();
   }
 }
-
-/*
-$("#viewer").keypress(function(event) {
-  if (event.keyCode === 37) {
-    $("#viewer-prev").click();
-    console.log("left");
-  }
-  else if (event.keyCode === 39) {
-    $("#viewer-next").click();
-    console.log("right");
-  }
-});
-*/
