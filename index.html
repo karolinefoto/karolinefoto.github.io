@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>KarolineFoto</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Average">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" media="screen and (max-width: 800px)" href="css/phone-styles.css">
@@ -48,32 +49,31 @@
     </div>
     <footer>
       <nav id="nav-bot">
-<!--
-        <ul class=""> <! navbuttons -
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left" onclick="">Favorittar</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
-        </ul> -->
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-left" onclick="toggleSidebar();">Favorittar</button>
+        <div id="nav-popup-menu" class="phone-hidden">
+          <div class="nav-button-big">
+            <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
+          </div>
+          <div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
+          </div>
+          <div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button>
+          </div>
+          <div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button>
+          </div>
+          <div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="showPortrett();">Portrett</button>
+          </div>
         </div>
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
-        </div>
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
-        </div>
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button>
-        </div>
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button>
-        </div>
-        <div class="nav-button-div">
-          <button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button>
+        <div id="nav-menu">
+          <div class="nav-button-div">
+            <button type="button" name="button" class="nav-button nav-center" onclick="toggleSidebar();">Meir info</button>
+            <button type="button" name="button" class="nav-button nav-center" onclick="toggleMenu();">Sorter Bilde</button>
+          </div>
+          <div class="">
+
+          </div>
         </div>
       </nav>
     </footer>

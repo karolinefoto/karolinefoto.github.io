@@ -464,3 +464,12 @@ function toggleSidebar() {
     sidebar.setAttribute("class", "phone-hidden");
   }
 }
+
+function toggleMenu() {
+  var menu = document.getElementById("nav-popup-menu");
+  if (menu.getAttribute("class") === "phone-hidden") {
+    menu.removeAttribute("class", "phone-hidden");
+  } else {
+    menu.setAttribute("class", "phone-hidden");
+  }
+}

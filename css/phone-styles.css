@@ -110,8 +110,39 @@ nav {
   display: flex;
 }
 
+#nav-popup-menu {
+  display: flex;
+  position: fixed;
+  bottom: 60px;
+  width: 100%;
+  flex-flow: row wrap;
+  background-color: #eee;
+}
+
+#nav-menu {
+  width: 100%;
+  height: auto;
+  background-color: #fab;
+}
+
+.nav-button-big {
+  flex: 100%;
+  margin: 2px;
+}
+
+.nav-button-small {
+  flex: calc(25% - 4px);
+  margin: 2px;
+}
+
 .nav-button-div {
-  flex: calc(100%/6);
+  flex: 20%;
+  margin: 2px;
+  height: auto;
+}
+
+.nav-button {
+  height: 40px;
 }
 
 #logo {
@@ -359,8 +390,8 @@ footer {
   margin-left: 10px;
   margin-right: 10px;
   font-size: 40px;
-  color: #fab;
-  text-shadow: 0px 0px 4px white;
+  color: #fff;
+  text-shadow: 0px 0px 1px white;
 }
 
 .header-subtitle {
@@ -368,20 +399,17 @@ footer {
   padding-bottom: 4px;
   margin-left: 10px;
   margin-right: 10px;
-  color: #fab;
-  text-shadow: 0px 0px 4px white;
+  color: #fff;
+  text-shadow: 0px 0px 1px white;
 }
 
 .header-button {
-  height: 55px;
+  height: 50px;
   width: 100%;
-  top: 12px;
-  left: 0;
-  background-color: #0FF;
 }
 
 button {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Average Sans', sans-serif;
   font-size: 16px;
   height: 48px;
   border-radius: 4px;
