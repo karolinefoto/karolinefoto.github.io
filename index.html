@@ -11,27 +11,23 @@
     <link rel="stylesheet" media="screen and (min-width: 801px)" href="css/desktop-styles.css">
   </head>
   <body id="body" onload="loadImagesAll();">
-
     <div id="header" class="inline">
-      <nav>
-        <ul class="">
+      <nav id="nav-top">
+        <ul class=""> <!-- navbuttons -->
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-left" onclick="">Favorittar</button></li>
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button></li>
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
-
         </ul>
       </nav>
-      <div id="logo">
+      <div id="logo"> <!-- logo -->
         <h1 class="header-title">Karolinefoto</h1>
         <h3 class="header-subtitle">Hobbyfotograf</h3>
       </div>
     </div>
-
-    <div id="sidebar">
-
+    <div id="sidebar"> <!-- The sideview containing additional content -->
       <div id="sidebar-image">
         <h3 style="color: black;">Tenestar eg tilbyr</h3>
         <p style="color: black;">"Eg er ein hobbyfotograf som tek litt bilder når eg finn noko fint å ta bilde av. Eg tek imot bestillingar på produkt med bilda eg har teke, som veggbilder, kalendarar, og liknande. Bileta i full oppløysing kan også kjøpast kopi av til bruk som bakgrunnar etc."</p>
@@ -44,21 +40,24 @@
         <li class="sidebar-element"><a href="#">Feedback</a></li>
       </ul>
     </div>
-
-    <div id="photos">
+    <div id="photos"> <!-- The main view displaying the photos in a list -->
       <div id="column1" class="column"></div>
       <div id="column2" class="column"></div>
       <div id="column3" class="column"></div>
       <div id="column4" class="column"></div>
     </div>
-<!--
-    <div id="viewer">
-        <button id="viewer-prev" class="header-button" type="button" name="button"></button>
-        <button id="viewer-close" class="header-button" type="button" name="button"></button>
-        <button id="viewer-next" class="header-button" type="button" name="button"></button>
-    </div>
--->
-
+    <footer>
+      <nav id="nav-bot">
+        <ul class=""> <!-- navbuttons -->
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left" onclick="">Favorittar</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
   <script type="text/javascript" src="js/script.js"></script>
 
