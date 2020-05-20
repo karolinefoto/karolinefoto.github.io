@@ -75,6 +75,40 @@ function scanImages()
   }
 }
 */
+
+function createColumns(){
+  var column1 = document.createElement('div');
+  var column2 = document.createElement('div');
+  var column3 = document.createElement('div');
+  var column4 = document.createElement('div');
+  column1.setAttribute("class", "column");
+  column2.setAttribute("class", "column");
+  column3.setAttribute("class", "column");
+  column4.setAttribute("class", "column");
+  column1.setAttribute("id", "column1");
+  column2.setAttribute("id", "column2");
+  column3.setAttribute("id", "column3");
+  column4.setAttribute("id", "column4");
+  document.body.appendChild(column1);
+  document.body.appendChild(column2);
+  document.body.appendChild(column3);
+  document.body.appendChild(column4);
+}
+
+//Split the images into 4 columns
+function chooseColumn() {
+  var columnNr = 1;
+  var column = getElementById("column" + columnNr);
+
+  if (columnNr < 4){
+    columnNr++;
+  }
+  else {
+    columnNr = 1;
+  }
+  return columnNr;
+}
+
 var nr = 01;
 
 var numberOfPicturesStemning = 32;
@@ -84,14 +118,23 @@ var numberOfPicturesPortrett = 07;
 
 function removeImages()
 {
-  const elem = document.getElementById("photos");
-  elem.innerHTML = '';
+  const elem1 = document.getElementById("column1");
+  elem1.innerHTML = '';
+  const elem2 = document.getElementById("column2");
+  elem2.innerHTML = '';
+  const elem3 = document.getElementById("column3");
+  elem3.innerHTML = '';
+  const elem4 = document.getElementById("column4");
+  elem4.innerHTML = '';
 }
+
+
 
 function loadImagesStemning() {
   var i = 0;
   nr = 1;
   var u = 0;
+  var c = 1;
   while (i < numberOfPicturesStemning) {
     if (nr < 10) {
       u = pad(nr);
@@ -108,11 +151,17 @@ function loadImagesStemning() {
     photo.setAttribute("src", "photos/stemning/ste" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgStemning" + u);
-    document.getElementById("photos").appendChild(box);
+    document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxStemning" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
+    if (c < 4){
+      c++;
+    }
+    else {
+      c = 1;
+    }
   }
 }
 
@@ -124,6 +173,8 @@ function showStemning() {
 function loadImagesNatur() {
   var i = 0;
   nr = 1;
+  var u = 0;
+  var c = 1;
   while (i < numberOfPicturesNatur) {
     if (nr < 10) {
       u = pad(nr);
@@ -139,11 +190,17 @@ function loadImagesNatur() {
     photo.setAttribute("src", "photos/natur/nat" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgNatur" + u);
-    document.getElementById("photos").appendChild(box);
+    document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxNatur" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
+    if (c < 4){
+      c++;
+    }
+    else {
+      c = 1;
+    }
   }
 }
 
@@ -156,6 +213,7 @@ function loadImagesDyr() {
   var i = 0;
   nr = 1;
   var u = 0;
+  var c = 1;
   while (i < numberOfPicturesDyr) {
     if (nr < 10) {
       u = pad(nr);
@@ -171,11 +229,17 @@ function loadImagesDyr() {
     photo.setAttribute("src", "photos/dyr/dyr" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgDyr" + u);
-    document.getElementById("photos").appendChild(box);
+    document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxDyr" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
+    if (c < 4){
+      c++;
+    }
+    else {
+      c = 1;
+    }
   }
 }
 
@@ -190,6 +254,7 @@ function loadImagesPortrett() {
   var i = 0;
   nr = 1;
   var u = 0;
+  var c = 1;
   while (i < numberOfPicturesPortrett) {
     if (nr < 10) {
       u = pad(nr);
@@ -207,11 +272,17 @@ function loadImagesPortrett() {
     photo.setAttribute("src", source + u + jpg);
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgPortrett" + u);
-    document.getElementById("photos").appendChild(box);
+    document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxPortrett" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
+    if (c < 4){
+      c++;
+    }
+    else {
+      c = 1;
+    }
   }
 }
 
@@ -235,8 +306,6 @@ function showAll() {
 function clickImage() {
   getElementById();
 }
-
-
 
 function imageViewer(inputImage) {
   document.addEventListener("keyup", keyPress);
