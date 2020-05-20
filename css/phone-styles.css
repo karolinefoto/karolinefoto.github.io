@@ -88,7 +88,7 @@ ul {
 }
 
 li {
-  width: 120px;
+  width: calc(100%/6);
 
 }
 
@@ -97,8 +97,9 @@ li {
 }
 
 nav {
-  padding: 12px;
-  width: max-content;
+  padding: 12px 0;
+  width: 100%;
+  align-content: stretch;
 }
 
 #nav-top {
@@ -107,6 +108,10 @@ nav {
 
 #nav-bot {
   display: flex;
+}
+
+.nav-button-div {
+  flex: calc(100%/6);
 }
 
 #logo {
@@ -369,9 +374,9 @@ footer {
 
 .header-button {
   height: 55px;
-  width: 1/6;
+  width: 100%;
   top: 12px;
-  left: 12px;
+  left: 0;
   background-color: #0FF;
 }
 
