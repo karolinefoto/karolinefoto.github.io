@@ -441,17 +441,26 @@ function keyPress() {
   else if (event.keyCode === 39) { //if press right arrow key
     nextImage();
   }
-  else if (event.keyCode === 27) { //in press escape
+  else if (event.keyCode === 27) { //if press escape
     closeViewer();
   }
 }
 
 function hideSidebar() {
   var sidebar = document.getElementById("sidebar");
-  sidebar.setAttribute("class", "hidden-phone");
+  sidebar.style.display = "none";
 }
 
 function showSidebar() {
   var sidebar = document.getElementById("sidebar");
   sidebar.removeAttribute("class", "hidden-phone");
+}
+
+function toggleSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  if (sidebar.getAttribute("class") === "phone-hidden") {
+    sidebar.removeAttribute("class", "phone-hidden");
+  } else {
+    sidebar.setAttribute("class", "phone-hidden");
+  }
 }
