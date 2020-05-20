@@ -117,10 +117,6 @@ nav
 #logo
 {
   width: max-content;
-  display: block;
-  position: fixed;
-  top: 0px;
-  right: 0px;
 }
 
 #sidebar
@@ -447,6 +443,9 @@ nav
 
 #header
 {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
   width: 100%;
   height: auto;
   background-image: linear-gradient(to right, #fab 0%, #fff 100%);
@@ -460,6 +459,21 @@ nav
 .header-box
 {
   height: 83px;
+}
+
+@media (max-width = 2000px) {
+
+}
+
+@media (max-width = 1200px) {
+  .header-title
+  {
+    text-align: center;
+  }
+  #logo
+  {
+    width: 100%;
+  }
 }
 
 .header-title
