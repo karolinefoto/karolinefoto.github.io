@@ -97,7 +97,7 @@ li {
 }
 
 nav {
-  padding: 12px 0;
+  padding: 4px 0;
   width: 100%;
   align-content: stretch;
 }
@@ -152,7 +152,7 @@ nav {
   /*position: fixed;*/
   left: 0px;
   margin-top: 80px;
-  width: calc(100% - 360px);
+  width: 100%;
   height: auto;
   min-height: 100px;
   background: #eee;
@@ -409,4 +409,9 @@ button:hover {
   border-color: #ddd;
   color: black;
   outline: 0;
+}
+
+.hidden-phone {
+  width: 0 !important;
+  display: none !important;
 }

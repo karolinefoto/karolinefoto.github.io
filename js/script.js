@@ -445,3 +445,13 @@ function keyPress() {
     closeViewer();
   }
 }
+
+function hideSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  sidebar.setAttribute("class", "hidden-phone");
+}
+
+function showSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  sidebar.removeAttribute("class", "hidden-phone");
+}
