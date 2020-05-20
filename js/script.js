@@ -328,12 +328,13 @@ function imageViewer(inputImage) {
   imageViewChild.setAttribute("id", "image-viewer-child");
   imageViewChild.setAttribute("src", inputImage);
   document.body.appendChild(viewer);
+  document.getElementById("viewer").appendChild(imageView);
+  document.getElementById("image-view").appendChild(imageViewChild);
   document.getElementById("viewer").appendChild(buttonBox);
   document.getElementById("button-box").appendChild(button1);
   document.getElementById("button-box").appendChild(button2);
   document.getElementById("button-box").appendChild(button3);
-  document.getElementById("viewer").appendChild(imageView);
-  document.getElementById("image-view").appendChild(imageViewChild);
+
   var viewerObj = document.getElementById("viewer");
   viewerObj.focus();
 

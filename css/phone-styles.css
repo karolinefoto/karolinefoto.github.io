@@ -113,8 +113,9 @@ nav {
 #nav-popup-menu {
   display: flex;
   position: fixed;
-  bottom: 60px;
+  bottom: 44px;
   width: 100%;
+  padding-bottom: 4px;
   flex-flow: row wrap;
   background-color: #eee;
 }
@@ -218,7 +219,7 @@ nav {
 }
 
 #viewer {
-  display: flex;
+  display: block;
   position: fixed;
   top: 80px;
   left: 0px;
@@ -226,9 +227,6 @@ nav {
   height: 100%;
   min-height: 600px;
   background-color: rgba(0,0,0,0.97);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 #background {
@@ -279,7 +277,7 @@ nav {
   height: auto;
   width: auto;
   padding: 20px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 #image-viewer-child {
@@ -287,13 +285,14 @@ nav {
   max-height: 75vh;
   max-width: 90vw;
   justify-content: center;
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 #button-box {
   display: flex;
   position: fixed;
-  top: 100px;
+  bottom: 60px;
+  margin-left: calc(50% - 147px);
 }
 
 .photo-box {
