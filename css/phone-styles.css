@@ -282,7 +282,7 @@ nav {
 
 #image-viewer-child {
   display: flex;
-  max-height: 75vh;
+  max-height: 65vh;
   max-width: 90vw;
   justify-content: center;
   align-self: flex-end;
@@ -291,7 +291,7 @@ nav {
 #button-box {
   display: flex;
   position: fixed;
-  bottom: 60px;
+  bottom: 40px;
   margin-left: calc(50% - 147px);
 }
 
