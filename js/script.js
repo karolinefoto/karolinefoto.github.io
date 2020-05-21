@@ -362,11 +362,11 @@ function toggleSidebar() {
 function toggleMenu() {
   var menu = document.getElementById("nav-popup-menu");
   var menuParent = document.getElementById("nav-menu-2");
-  if (menuParent.getAttribute("class") === "phone-hidden") {
+  if (menuParent.getAttribute("class") === "phone-hidden desktop-hidden") {
     menuParent.removeAttribute("class", "phone-hidden");
     body.setAttribute("class", "no-scroll");
   } else {
-    menuParent.setAttribute("class", "phone-hidden");
+    menuParent.setAttribute("class", "phone-hidden desktop-hidden");
     body.removeAttribute("class", "no-scroll");
   }
 }

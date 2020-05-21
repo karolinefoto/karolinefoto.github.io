@@ -396,3 +396,7 @@ button:hover {
   color: black;
   outline: 0;
 }
+
+.desktop-hidden {
+  display: none;
+}
