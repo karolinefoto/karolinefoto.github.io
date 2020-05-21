@@ -319,11 +319,14 @@ function imageViewer(inputImage) {
   viewer.setAttribute("id", "viewer");
   buttonBox.setAttribute("id", "button-box");
   button1.setAttribute("id", "viewer-prev");
-  button1.setAttribute("onclick", "prevImage();")
+  button1.setAttribute("onclick", "prevImage();");
+  button1.innerHTML = 'Forrige';
   button2.setAttribute("id", "viewer-close");
-  button2.setAttribute("onclick", "closeViewer();")
+  button2.setAttribute("onclick", "closeViewer();");
+  button2.innerHTML = 'X';
   button3.setAttribute("id", "viewer-next");
-  button3.setAttribute("onclick", "nextImage();")
+  button3.setAttribute("onclick", "nextImage();");
+  button3.innerHTML = 'Neste';
   imageView.setAttribute("id", "image-view");
   imageViewChild.setAttribute("id", "image-viewer-child");
   imageViewChild.setAttribute("src", inputImage);
@@ -468,9 +471,10 @@ function toggleSidebar() {
 
 function toggleMenu() {
   var menu = document.getElementById("nav-popup-menu");
-  if (menu.getAttribute("class") === "phone-hidden") {
-    menu.removeAttribute("class", "phone-hidden");
+  var menuParent = document.getElementById("nav-menu-2");
+  if (menuParent.getAttribute("class") === "phone-hidden") {
+    menuParent.removeAttribute("class", "phone-hidden");
   } else {
-    menu.setAttribute("class", "phone-hidden");
+    menuParent.setAttribute("class", "phone-hidden");
   }
 }

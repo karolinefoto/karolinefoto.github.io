@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" media="screen and (max-width: 800px)" href="css/phone-styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 320px)" href="css/tiny-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 800px)" href="css/phone-styles.css">
     <link rel="stylesheet" media="screen and (min-width: 801px)" href="css/desktop-styles.css">
   </head>
   <body id="body" onload="loadImagesAll();">
@@ -49,23 +50,7 @@
     </div>
     <footer>
       <nav id="nav-bot">
-        <div id="nav-popup-menu" class="phone-hidden">
-          <div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
-          </div>
-          <div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
-          </div>
-          <div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button>
-          </div>
-          <div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button>
-          </div>
-          <div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="showPortrett();">Portrett</button>
-          </div>
-        </div>
+
         <div id="nav-menu">
           <div class="nav-button-div">
             <button type="button" name="button" class="nav-button nav-center" onclick="toggleSidebar();">Meir info</button>
@@ -77,6 +62,29 @@
         </div>
       </nav>
     </footer>
+
+    <div id="nav-menu-2" class="phone-hidden">
+      <div id="nav-popup-menu">
+        <div class="nav-button-close-div">
+          <button type="button" name="button" class="nav-center nav-button-close" onclick="toggleMenu();">X</button>
+        </div>
+        <div class="nav-button-big">
+          <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
+        </div>
+        <div class="nav-button-small">
+          <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
+        </div><!--
+     --><div class="nav-button-small">
+          <button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button>
+        </div><!--
+     --><div class="nav-button-small">
+          <button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button>
+        </div><!--
+     --><div class="nav-button-small">
+          <button type="button" name="button" class="header-button nav-center" onclick="showPortrett();">Portrett</button>
+        </div>
+      </div>
+    </div>
   </body>
   <script type="text/javascript" src="js/script.js"></script>
 

@@ -108,30 +108,16 @@ nav {
 
 #nav-bot {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #nav-popup-menu {
-  display: block;
+  display: flex;
   position: fixed;
-  bottom: calc(50vh - 60px);
-  left: 10%;
-  width: 80%;
-  height: auto;
-  padding: 4px;
-  z-index: 6;
-}
-
-#nav-button-close-div {
-
-}
-
-.nav-button-close {
-  width: 40px;
-  height: 40px;
-  float: right;
-  margin: 10px;
+  bottom: 44px;
+  width: 100%;
+  padding-bottom: 4px;
+  flex-flow: row wrap;
+  background-color: #eee;
 }
 
 #nav-menu {
@@ -140,26 +126,14 @@ nav {
   background-color: #fab;
 }
 
-#nav-menu-2 {
-  width: 100vw;
-  height: 100vh;
-  z-index: 5;
-  background-color: #0005;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 .nav-button-big {
-  width: 100%;
-  margin: 0;
+  flex: 100%;
+  margin: 2px;
 }
 
 .nav-button-small {
-  width: 25%;
-  margin: 0;
-  display: inline-block;
-  font-size: 0;
+  flex: calc(25% - 4px);
+  margin: 2px;
 }
 
 .nav-button-div {
