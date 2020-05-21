@@ -1,81 +1,5 @@
+// Unused block of code
 /*
-function wait(ms)
-{
-  var d = new Date();
-  var d2 = null;
-  do { d2 = new Date(); }
-  while (d2-d < ms);
-}
-
-
-
-function loadPhotos()
-{
-  var photo = document.createElement('div');
-  photo.setAttribute("class", "photo");
-  photo.innerHTML = "Photo " + nr
-  document.getElementById("photos").appendChild(photo);
-  nr++;
-}
-*/
-
-/*
-function scanImages()
-{
-  var i = 0;
-  var nameString = "photos/img" + nr;
-  var filename = nameString.split("/").pop();
-  if (filename ) {
-
-  }
-  $.ajax(
-  {
-    url:''
-    type:'HEAD'
-    error: function()
-    {
-
-    },
-    success: function()
-    {
-
-  }
-  }
-  );
-}
-*/
-
-/*
-function printNumber()
-{
-  window.alert(readNumber);
-}
-
-function imageExist(url)
-{
-  var img = new Image();
-  img.src = url;
-  return img.height != 0;
-}
-*/
-
-/*
-function scanImages()
-{
-  var i = 0;
-  var nameString = "photos/img" + nr;
-  var filename = nameString.split("/").pop();
-  if (imageExist(nameString) !== 0)
-  {
-    loadImages();
-  }
-  else
-  {
-    return 0;
-  }
-}
-*/
-
 function createColumns(){
   var column1 = document.createElement('div');
   var column2 = document.createElement('div');
@@ -94,30 +18,26 @@ function createColumns(){
   document.body.appendChild(column3);
   document.body.appendChild(column4);
 }
+*/
 
 //Split the images into 4 columns
 function chooseColumn() {
   var columnNr = 1;
   var column = getElementById("column" + columnNr);
-
   if (columnNr < 4){
     columnNr++;
-  }
-  else {
+  } else {
     columnNr = 1;
   }
   return columnNr;
 }
-
 var nr = 01;
-
 var numberOfPicturesStemning = 32;
 var numberOfPicturesNatur = 53;
 var numberOfPicturesDyr = 46;
 var numberOfPicturesPortrett = 07;
 
-function removeImages()
-{
+function removeImages() {
   const elem1 = document.getElementById("column1");
   elem1.innerHTML = '';
   const elem2 = document.getElementById("column2");
@@ -127,8 +47,6 @@ function removeImages()
   const elem4 = document.getElementById("column4");
   elem4.innerHTML = '';
 }
-
-
 
 function loadImagesStemning() {
   var i = 0;
@@ -142,7 +60,6 @@ function loadImagesStemning() {
     else {
       u = nr;
     }
-    console.log(u);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
@@ -248,8 +165,6 @@ function showDyr() {
   loadImagesDyr();
 }
 
-//var x = 0;
-
 function loadImagesPortrett() {
   var i = 0;
   nr = 1;
@@ -279,8 +194,7 @@ function loadImagesPortrett() {
     i++;
     if (c < 4){
       c++;
-    }
-    else {
+    } else {
       c = 1;
     }
   }
@@ -338,14 +252,12 @@ function imageViewer(inputImage) {
   document.getElementById("button-box").appendChild(button2);
   document.getElementById("button-box").appendChild(button3);
   body.setAttribute("class", "no-scroll");
-
   var viewerObj = document.getElementById("viewer");
   viewerObj.focus();
 
 }
 
-function closeViewer()
-{
+function closeViewer() {
   const viewer = document.getElementById("viewer");
   viewer.parentNode.removeChild(viewer);
   document.body.focus();
@@ -354,31 +266,22 @@ function closeViewer()
 
 }
 
-function nextImage()
-{
+function nextImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
   var oldNr = oldSrc.slice(-6 ,-4);
   var grp = oldSrc.slice(-9, -6);
-  console.log(oldSrc);
-  console.log(oldNr);
   var newNr = Number(oldNr);
-  console.log(grp);
-  console.log(numberOfPicturesStemning + "stemningnr");
-  if (grp == "por" && newNr >= numberOfPicturesPortrett)
-  {
+  if (grp == "por" && newNr >= numberOfPicturesPortrett) {
     newNr = 1;
   }
-  else if (grp == "nat" && newNr >= numberOfPicturesNatur)
-  {
+  else if (grp == "nat" && newNr >= numberOfPicturesNatur) {
     newNr = 1;
   }
-  else if (grp == "ste" && newNr >= numberOfPicturesStemning)
-  {
+  else if (grp == "ste" && newNr >= numberOfPicturesStemning) {
     newNr = 1;
   }
-  else if (grp == "dyr" && newNr >= numberOfPicturesDyr)
-  {
+  else if (grp == "dyr" && newNr >= numberOfPicturesDyr) {
     newNr = 1;
   }
   else {
@@ -388,67 +291,49 @@ function nextImage()
   if (newNr < 10) {
     newNr = pad(newNr);
   }
-  console.log("newNr = " + newNr);
   var newSrc = oldSrc.replace(oldNr, newNr);
   imageViewChild.setAttribute("src", newSrc);
 }
 
-function prevImage()
-{
+function prevImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
   var oldNr = oldSrc.slice(-6 ,-4);
   var grp = oldSrc.slice(-9, -6);
-  console.log(oldSrc);
-  console.log(oldNr);
-  console.log(grp);
   var newNr = Number(oldNr);
-  if (newNr <= 1)
-  {
-    if (grp == "por")
-    {
+  if (newNr <= 1) {
+    if (grp == "por") {
       newNr = numberOfPicturesPortrett;
     }
-    if (grp == "nat")
-    {
+    if (grp == "nat") {
       newNr = numberOfPicturesNatur;
     }
-    if (grp == "ste")
-    {
+    if (grp == "ste") {
       newNr = numberOfPicturesStemning;
     }
-    if (grp == "dyr")
-    {
+    if (grp == "dyr") {
       newNr = numberOfPicturesDyr;
     }
-  }
-  else
-  {
+  } else {
     newNr--;
   }
   if (newNr < 10) {
     newNr = pad(newNr);
   }
-
-  console.log("newNr = " + newNr);
   var newSrc = oldSrc.replace(oldNr, newNr);
   imageViewChild.setAttribute("src", newSrc);
 }
 
-function pad(d)
-{
+function pad(d) {
   return (d < 10) ? '0' + d.toString() : toString();
 }
-
 
 function keyPress() {
   if (event.keyCode === 37) { //if press left arrow key
     prevImage();
-  }
-  else if (event.keyCode === 39) { //if press right arrow key
+  } else if (event.keyCode === 39) { //if press right arrow key
     nextImage();
-  }
-  else if (event.keyCode === 27) { //if press escape
+  } else if (event.keyCode === 27) { //if press escape
     closeViewer();
   }
 }
@@ -467,8 +352,10 @@ function toggleSidebar() {
   var sidebar = document.getElementById("sidebar");
   if (sidebar.getAttribute("class") === "phone-hidden") {
     sidebar.removeAttribute("class", "phone-hidden");
+    body.setAttribute("class", "no-scroll");
   } else {
     sidebar.setAttribute("class", "phone-hidden");
+    body.removeAttribute("class", "no-scroll");
   }
 }
 

@@ -102,6 +102,24 @@ nav {
   align-content: stretch;
 }
 
+.three-streak-button {
+  display: block;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  height: 50px;
+  width: 50px;
+}
+
+.info-button {
+  display: block;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+}
+
 #nav-top {
   display: none;
 }
@@ -188,6 +206,7 @@ nav {
   height: 100%;
   width: 360px;
   background-color: #ddd;
+  overflow: scroll;
 }
 
 #sidebar-image {
@@ -401,7 +420,7 @@ footer {
   justify-content: center;
   flex-flow: row wrap;
   width: 100%;
-  height: auto;
+  height: 80px;
   background-image: linear-gradient(to right, #fab 0%, #fff 100%);
   box-shadow: 0px 0px 4px black;
   position: fixed;
@@ -420,7 +439,7 @@ footer {
   margin-bottom: 5px;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   text-shadow: 0px 0px 1px white;
 }
