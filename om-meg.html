@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>KarolineFoto</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Average">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" media="screen and (max-width: 320px)" href="css/tiny-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 900px)" href="css/phone-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 901px)" href="css/desktop-styles.css">
+  </head>
+  <body id="body" onload="loadImagesAll();">
+    <div id="header" class="inline">
+      <div id="top-buttons">
+        <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="" alt="..."></button>
+        <button type="button" name="button" class="info-button" onclick="toggleSidebar();"><img src="" alt="i"></button>
+      </div>
+      <nav id="nav-top">
+        <ul class=""> <!-- navbuttons -->
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left" onclick="">Favorittar</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
+        </ul>
+      </nav>
+      <div id="logo"> <!-- logo -->
+        <h1 class="header-title">KarolineFoto</h1>
+        <h3 class="header-subtitle">Hobbyfotograf</h3>
+      </div>
+    </div>
+    <div class="">
+
+    </div>
+  <script type="text/javascript" src="js/script.js"></script>
+
+</html>

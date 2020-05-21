@@ -96,6 +96,10 @@ li {
   display: inline;
 }
 
+#top-buttons {
+  display: none;
+}
+
 nav {
   padding: 12px;
   width: max-content;
@@ -356,7 +360,7 @@ nav {
 
 .header-button {
   height: 55px;
-  width: 120px;
+  width: 100px;
   top: 12px;
   left: 12px;
   background-color: #0FF;
