@@ -337,6 +337,7 @@ function imageViewer(inputImage) {
   document.getElementById("button-box").appendChild(button1);
   document.getElementById("button-box").appendChild(button2);
   document.getElementById("button-box").appendChild(button3);
+  body.setAttribute("class", "no-scroll");
 
   var viewerObj = document.getElementById("viewer");
   viewerObj.focus();
@@ -348,7 +349,9 @@ function closeViewer()
   const viewer = document.getElementById("viewer");
   viewer.parentNode.removeChild(viewer);
   document.body.focus();
-  document.getElementById("viewer").document.removeEventListener("keyup", keyPress);
+  body.removeAttribute("class", "no-scroll");
+  document.removeEventListener("keyup", keyPress);
+
 }
 
 function nextImage()
@@ -474,7 +477,9 @@ function toggleMenu() {
   var menuParent = document.getElementById("nav-menu-2");
   if (menuParent.getAttribute("class") === "phone-hidden") {
     menuParent.removeAttribute("class", "phone-hidden");
+    body.setAttribute("class", "no-scroll");
   } else {
     menuParent.setAttribute("class", "phone-hidden");
+    body.removeAttribute("class", "no-scroll");
   }
 }
