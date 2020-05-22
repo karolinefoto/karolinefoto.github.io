@@ -358,7 +358,7 @@ function prevImage() {
       newNr = numberOfPicturesDyr;
     }
     if (grp == "fav") {
-      newNr = numberOfPicturesFavorittar;
+      newNr = numberOfPicturesFavorittar; 
     }
   } else {
     newNr--;

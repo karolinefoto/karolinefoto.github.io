@@ -39,10 +39,8 @@
       </div>
       <ul style="height: 350px;">
         <li class="sidebar-element"><img src="images/f_logo_RGB-Blue_512.png" alt="FB-logo" style="height: 56px; display: inline-block; padding: 4px;"><a href="https://www.facebook.com/karolinefoto/">Besøk Karolinefoto på facebook!</a></li>
-        <li class="sidebar-element"><a href="om-meg.html">Kontakt Meg</a></li>
-        <li class="sidebar-element"><a href="kjøp.html">Kjøpe Bilder</a></li>
-        <li class="sidebar-element"><a href="kjøp.html">Kjøpe Kalender</a></li>
-        <li class="sidebar-element"><a href="#">Feedback</a></li>
+        <li class="sidebar-element"><a href="kjøp.html">Kjøpe Bilde eller andre produkt</a></li>
+        <li class="sidebar-element"><a href="kontakt.html">Om meg / Kontakt / <br> Gi meg tilbakemelding!</a></li>
       </ul>
     </div>
     <div id="photos"> <!-- The main view displaying the photos in a list -->
@@ -72,10 +70,16 @@
         <div class="nav-button-close-div">
           <button type="button" name="button" class="nav-center nav-button-close" onclick="toggleMenu();">X</button>
         </div>
-        <div class="nav-button-big">
-          <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
+        <div class="">
+          <div class="nav-button-big">
+            <button type="button" name="button" class="header-button nav-center" onclick="showFavorittar();">Favorittar</button>
+          </div><!--
+       --><div class="nav-button-big">
+            <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
+          </div>
         </div>
-        <div class="nav-button-small">
+        <!--
+     --><div class="nav-button-small">
           <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
         </div><!--
      --><div class="nav-button-small">
