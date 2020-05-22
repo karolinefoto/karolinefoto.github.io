@@ -213,8 +213,9 @@ nav {
   margin: 16px;
   background-color: #eee;
   width: auto;
-  height: 380px;
+  height: 300px;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .sidebar-element {
@@ -266,6 +267,12 @@ nav {
     flex: 100%;
     max-width: 100%;
   }
+}
+
+#om-meg-picture {
+  display: block;
+  width: auto;
+  height: 100%;
 }
 
 #viewer {

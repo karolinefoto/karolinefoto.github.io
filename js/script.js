@@ -36,6 +36,7 @@ var numberOfPicturesStemning = 32;
 var numberOfPicturesNatur = 53;
 var numberOfPicturesDyr = 46;
 var numberOfPicturesPortrett = 07;
+var numberOfPicturesFavorittar = 08;
 
 function removeImages() {
   const elem1 = document.getElementById("column1");
@@ -46,6 +47,45 @@ function removeImages() {
   elem3.innerHTML = '';
   const elem4 = document.getElementById("column4");
   elem4.innerHTML = '';
+}
+
+function loadImagesFavorittar(){
+  var i = 0;
+  nr = 1;
+  var u = 0;
+  var c = 1;
+  while (i < numberOfPicturesFavorittar) {
+    if (nr < 10) {
+      u = pad(nr);
+    }
+    else {
+      u = nr;
+    }
+    var box = document.createElement('div');
+    var photo = document.createElement('img');
+    box.setAttribute("class", "photo-box");
+    box.setAttribute("id", "boxFavorittar" + u);
+    box.setAttribute("focusable", "0");
+    photo.setAttribute("src", "photos/favorittar/fav" + u +".jpg");
+    photo.setAttribute("class", "photo");
+    photo.setAttribute("id", "imgFavorittar" + u);
+    document.getElementById("column" + c).appendChild(box);
+    document.getElementById("boxFavorittar" + u).appendChild(photo);
+    photo.setAttribute("onclick", "imageViewer(src);");
+    nr++;
+    i++;
+    if (c < 4){
+      c++;
+    }
+    else {
+      c = 1;
+    }
+  }
+}
+
+function showFavorittar() {
+  removeImages();
+  loadImagesFavorittar();
 }
 
 function loadImagesStemning() {
@@ -284,6 +324,9 @@ function nextImage() {
   else if (grp == "dyr" && newNr >= numberOfPicturesDyr) {
     newNr = 1;
   }
+  else if (grp == "fav" && newNr >= numberOfPicturesFavorittar) {
+    newNr = 1;
+  }
   else {
     newNr++;
   }
@@ -313,6 +356,9 @@ function prevImage() {
     }
     if (grp == "dyr") {
       newNr = numberOfPicturesDyr;
+    }
+    if (grp == "fav") {
+      newNr = numberOfPicturesFavorittar;
     }
   } else {
     newNr--;
