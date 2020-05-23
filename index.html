@@ -12,38 +12,42 @@
     <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 900px)" href="css/phone-styles.css">
     <link rel="stylesheet" media="screen and (min-width: 901px)" href="css/desktop-styles.css">
   </head>
-  <body id="body" onload="loadImagesAll();">
+  <body id="body" onload="loadImagesAll(); selectLanguage('lang-no')">
     <div id="header" class="inline">
       <div id="top-buttons">
-        <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="" alt="..."></button>
-        <button type="button" name="button" class="info-button" onclick="toggleSidebar();"><img src="" alt="i"></button>
+        <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="images/sort.png" alt="..." style="display: block; height: 30px; margin-left: auto; margin-right: auto;"></button>
+        <button type="button" name="button" class="info-button" onclick="toggleSidebar();"><img src="images/menu.png" alt="meny" style="display: block; height: 30px; margin-left: auto; margin-right: auto;"></button>
       </div>
       <nav id="nav-top">
-        <ul class=""> <!-- navbuttons -->
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left" onclick="showFavorittar();">Favorittar</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
+        <ul id="nav-top-buttons"> <!-- navbuttons -->
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left lang-no" style="display: none;" onclick="showFavorittar();"><span class="lang-no" style=display:none;>Favorittar</span><span class="lang-en" style=display:none;>Favorites</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center lang-no active-header-button" style="display: none;" onclick="showAll();"><span class="lang-no" style=display:none;></span>Alle<span class="lang-en" style=display:none;>All</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center lang-no" style="display: none;" onclick="showStemning();"><span class="lang-no" style=display:none;>Stemning</span><span class="lang-en" style=display:none;>Ambiance</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();"><span class="lang-no" style=display:none;></span>Dyr<span class="lang-en" style=display:none;>Animals</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();"><span class="lang-no" style=display:none;></span>Natur<span class="lang-en" style=display:none;>Nature</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();"><span class="lang-no" style=display:none;></span>Portrett<span class="lang-en" style=display:none;>Portraits</span></button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="selectLanguage('lang-no');">Norsk</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="selectLanguage('lang-en');">English</button></li>
         </ul>
       </nav>
       <div id="logo"> <!-- logo -->
         <h1 class="header-title">KarolineFoto</h1>
-        <h3 class="header-subtitle">Hobbyfotograf</h3>
+        <h3 class="header-subtitle lang-no" style="display: none;">Hobbyfotograf</h3>
+        <h3 class="header-subtitle lang-en" style="display: none;">Hobbyphotographer</h3>
       </div>
     </div>
     <div id="sidebar" class="phone-hidden"> <!-- The sideview containing additional content -->
       <div id="sidebar-image">
         <img id="om-meg-picture" src="images/fotograf.jpg" alt="">
       </div>
-      <ul style="height: 450px;">
+      <ul style="height: 500px;">
         <li class="sidebar-element"><img src="images/f_logo_RGB-Blue_512.png" alt="FB-logo" style="height: 56px; display: inline-block; padding: 4px;"><a href="https://www.facebook.com/karolinefoto/">Besøk Karolinefoto på facebook!</a></li>
-        <li class="sidebar-element"><a href="kjøp.html">Kjøpe Bilde eller andre produkt</a></li>
-        <li class="sidebar-element"><a href="kontakt.html">Om meg / Kontakt / <br> Gi meg tilbakemelding!</a></li>
+        <li class="sidebar-element"><img src="images/buy.svg" alt="Kjøp" style="height: 56px; display: inline-block; padding: 4px;"><a href="kjøp.html">Kjøp bilde eller andre produkt</a></li>
+        <li class="sidebar-element"><img src="images/contact.svg" alt="Kontakt" style="height: 56px; display: inline-block; padding: 4px;"><a href="kontakt.html">Om meg / Kontakt / <br> Gi meg tilbakemelding!</a></li>
+        <li class="sidebar-element"><img src="images/faq.svg" alt="Q&A" style="height: 56px; display: inline-block; padding: 4px;"><a href="faq.html">Spørsmål og svar <br>Prisar etc. </a></li>
         <li class="sidebar-element"><a href="LICENSE.txt">Copyright og gjenbruk</a></li>
         <div class="copyright-text-box">
-          <p class="copyright-text">Photographies are under Copyright © 2020 by Karoline Myskja. All Rights Reserved. The rest of the website is licensed under the MIT License.</p>
+          <p class="copyright-text">Photographies are under Copyright © 2020 Karoline Myskja. All Rights Reserved. The rest of the website is licensed under the MIT License.</p>
         </div>
       </ul>
     </div>

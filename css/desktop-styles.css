@@ -70,10 +70,10 @@ a {
 li a {
   text-decoration: none;
   color: black;
-  font-size: 24px;
-  font-family: 'Exo 2', sans-serif;
+  font-size: 22px;
+  font-family: 'Average Sans', sans-serif;
   padding: 4px;
-  text-align: right;
+  text-align: left;
   display: block;
   width: 250px;
   float: right;
@@ -321,6 +321,10 @@ nav {
   display: inline;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -360,11 +364,11 @@ nav {
 }
 
 .header-button {
-  height: 55px;
+  height: 54px;
   width: 100px;
   top: 12px;
   left: 12px;
-  background-color: #0FF;
+  vertical-align: middle;
 }
 
 .copyright-text-box {
@@ -379,7 +383,6 @@ nav {
   font-family: 'Average Sans', sans-serif;
 }
 
-
 #om-meg-picture {
   display: block;
   width: auto;
@@ -387,32 +390,37 @@ nav {
 }
 
 button {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Average Sans', sans-serif;
   font-size: 16px;
-  height: 48px;
-  border-radius: 4px;
+  height: 54px;
+  border-radius: 6px;
+  border-width: 0;
   border-color: #fff;
-  background-image: linear-gradient(#e9a, #d89);
+  background-color: #D23F6A;
   color: white;
   outline: 0;
 }
 
+.active-header-button {
+  border-bottom: white solid 4px;
+  height: 54px;
+}
+
 button:focus {
   outline: 0 !important;
-  border-width: 2px;
-  border-color: black;
+/*  border: none;*/
 }
 
 button:active {
   background: #ddd;
-  border-color: #ccc;
+/*  border: none;*/
   color: black;
   outline: 0;
 }
 
 button:hover {
-  background: #eee;
-  border-color: #ddd;
+  background: #E24F7A;
+/*  border: none;*/
   color: black;
   outline: 0;
 }

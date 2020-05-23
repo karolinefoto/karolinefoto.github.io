@@ -20,6 +20,17 @@ function createColumns(){
 }
 */
 
+//Make buttons active
+var header = document.getElementById("nav-top-buttons");
+var btns = header.getElementsByClassName("header-button");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active-header-button");
+  current[0].className = current[0].className.replace(" active-header-button", "");
+  this.className += " active-header-button";
+  });
+}
+
 //Split the images into 4 columns
 function chooseColumn() {
   var columnNr = 1;
@@ -358,7 +369,7 @@ function prevImage() {
       newNr = numberOfPicturesDyr;
     }
     if (grp == "fav") {
-      newNr = numberOfPicturesFavorittar; 
+      newNr = numberOfPicturesFavorittar;
     }
   } else {
     newNr--;
@@ -414,5 +425,27 @@ function toggleMenu() {
   } else {
     menuParent.setAttribute("class", "phone-hidden desktop-hidden");
     body.removeAttribute("class", "no-scroll");
+  }
+}
+
+function selectLanguage(language) {
+//  document.getElementsByClassName("lang-no").style.display="none";
+//  document.getElementsByClassName("lang-en").style.display="none";
+//  document.getElementsByClassName(language).style.display = "unset";
+//  return false;
+  var y = document.getElementsByClassName("lang-no");
+  var u;
+  for (u = 0; u < y.length; u++) {
+   y[u].style.display = "none";
+  }
+  var z = document.getElementsByClassName("lang-en");
+  var o;
+  for (o = 0; o < z.length; o++) {
+   z[o].style.display = "none";
+  }
+  var x = document.getElementsByClassName(language);
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "";
   }
 }
