@@ -399,6 +399,7 @@ button {
   background-color: #644D99;
   color: white;
   outline: 0;
+  cursor: pointer;
 }
 
 .active-header-button {
