@@ -453,3 +453,14 @@ function selectLanguage(language) {
   }
 }
 */
+
+function agreeToCookies() {
+  localStorage.setItem('hasSeenCookieWarning', 'yes');
+  document.getElementById("cookie-warning-box").style.display="none";
+}
+
+function checkCookies() {
+  if (localStorage.getItem('hasSeenCookieWarning') == 'yes') {
+    document.getElementById("cookie-warning-box").style.display="none";
+  }
+}

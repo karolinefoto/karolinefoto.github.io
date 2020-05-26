@@ -101,7 +101,7 @@ li {
 }
 
 nav {
-  padding: 12px;
+  margin: 12px;
   width: max-content;
 }
 
@@ -485,4 +485,42 @@ button:hover {
   margin-left: 8px;
   border: none;
   border-radius: 4px;
+}
+
+#cookie-warning-box {
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: max-content;
+  width: max-content;
+  border-radius: 8px;
+  background-color: orange;
+  box-shadow: 0 0 1px black;
+  z-index: 10;
+}
+
+#cookie-warning-box > p {
+  font-family: 'Average Sans', sans-serif;
+  font-size: 20px;
+  color: black;
+  padding: 10px;
+}
+
+#cookie-warning-box > p > button {
+  height: 30px;
+  width: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: white;
+  color: black;
+  border: black solid 1px;
+}
+
+#cookie-warning-box > p > button:hover {
+  background-color: lightgray;
+}
+
+#cookie-warning-box > p > button:active {
+  background-color: gray;
 }
