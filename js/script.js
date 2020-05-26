@@ -20,15 +20,17 @@ function createColumns(){
 }
 */
 
-//Make buttons active
-var header = document.getElementById("nav-top-buttons");
-var btns = header.getElementsByClassName("header-button");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active-header-button");
-  current[0].className = current[0].className.replace(" active-header-button", "");
-  this.className += " active-header-button";
-  });
+function activeButtons() {
+  //Make buttons active
+  var header = document.getElementById("nav-top-buttons");
+  var btns = header.getElementsByClassName("header-button");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active-header-button");
+    current[0].className = current[0].className.replace(" active-header-button", "");
+    this.className += " active-header-button";
+    });
+  }
 }
 
 //Split the images into 4 columns
@@ -77,7 +79,7 @@ function loadImagesFavorittar(){
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxFavorittar" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "photos/favorittar/fav" + u +".jpg");
+    photo.setAttribute("src", "../photos/favorittar/fav" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgFavorittar" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -116,7 +118,7 @@ function loadImagesStemning() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxStemning" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "photos/stemning/ste" + u +".jpg");
+    photo.setAttribute("src", "../photos/stemning/ste" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgStemning" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -155,7 +157,7 @@ function loadImagesNatur() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxNatur" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "photos/natur/nat" + u +".jpg");
+    photo.setAttribute("src", "../photos/natur/nat" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgNatur" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -194,7 +196,7 @@ function loadImagesDyr() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxDyr" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "photos/dyr/dyr" + u +".jpg");
+    photo.setAttribute("src", "../photos/dyr/dyr" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgDyr" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -230,7 +232,7 @@ function loadImagesPortrett() {
     }
     var box = document.createElement('div');
     var photo = document.createElement('img');
-    var source = "photos/portrett/por";
+    var source = "../photos/portrett/por";
     var jpg = ".jpg";
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxPortrett" + u);
@@ -428,6 +430,7 @@ function toggleMenu() {
   }
 }
 
+/*
 function selectLanguage(language) {
 //  document.getElementsByClassName("lang-no").style.display="none";
 //  document.getElementsByClassName("lang-en").style.display="none";
@@ -449,3 +452,4 @@ function selectLanguage(language) {
     x[i].style.display = "";
   }
 }
+*/

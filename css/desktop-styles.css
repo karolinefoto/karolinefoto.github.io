@@ -118,6 +118,15 @@ nav {
   width: max-content;
 }
 
+#header-logo {
+  height: 60px;
+  display: inline-block;
+}
+
+#header-text {
+  display: inline-block;
+}
+
 #sidebar {
   display: block;
   position: fixed;
@@ -148,6 +157,21 @@ nav {
   border-radius: 4px;
 }
 
+.sidebar-element-img-tall {
+  height: 56px;
+  display: inline-block;
+  padding: 4px;
+}
+
+.sidebar-element-img-short {
+  width: 56px;
+  overflow: hidden;
+  display: inline-block;
+  padding: 4px;
+  border-radius: 8px;
+  height: 30px;
+}
+
 #photos {
   display: flex;
   /*position: fixed;*/
@@ -161,6 +185,7 @@ nav {
   flex-flow: row wrap;
   justify-content: center;
   align-items: stretch;
+  padding-top: 8px;
 }
 
 .column {
@@ -277,6 +302,7 @@ nav {
   box-shadow: 0px 0px 2px grey;
   border: none;
   transition-duration: 200ms;
+  cursor: pointer;
 }
 
 .photo-box:focus {
@@ -428,4 +454,35 @@ button:hover {
 
 .desktop-hidden {
   display: none;
+}
+
+#sidebar-height {
+  height: 530px;
+}
+
+.picture-document {
+  height: calc(100vh - 85px);
+  border: none;
+  width: calc(50% - 180px);
+}
+
+.product-form {
+  display: inline-block;
+  z-index: -1;
+  width: calc(50% - 180px);
+  height: calc(100vh - 85px);
+}
+
+.top-margin {
+  margin-top: 80px;
+}
+
+.faq-doc {
+  width: calc(100% - 380px);
+  min-width: 360px;
+  height: calc(100vh - 100px);
+  margin-top: 8px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 4px;
 }
