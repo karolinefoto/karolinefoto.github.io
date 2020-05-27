@@ -10,9 +10,9 @@ used for any purpose, personal or commercial, without explicit permission.
 
 The rest of the Website is licensed under the MIT License.
 
-Icons made by https://www.flaticon.com/authors/freepik (Freepik) from https://www.flaticon.com/. All rights reserved.
-Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-Icons made by <a href="https://www.flaticon.com/free-icon/settings_992668" title="dmitri13">dmitri13</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+Icons made by https://www.flaticon.com/authors/freepik (Freepik) from https://www.flaticon.com/.
+Icons made by https://www.flaticon.com/authors/pixel-perfect (Pixel perfect) from https://www.flaticon.com/.
+Icons made by https://www.flaticon.com/free-icon/settings_992668 (dmitri13) from https://www.flaticon.com/.
 
 MIT License
 

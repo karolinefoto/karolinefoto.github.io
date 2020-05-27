@@ -464,3 +464,11 @@ function checkCookies() {
     document.getElementById("cookie-warning-box").style.display="none";
   }
 }
+
+function showKontaktForm() {
+  document.getElementById("kontakt-form-div").style.display="block";
+}
+
+function hideKontaktForm() {
+  document.getElementById("kontakt-form-div").style.display="none";
+}
