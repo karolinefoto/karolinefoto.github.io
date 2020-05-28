@@ -13,7 +13,7 @@
     <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 960px)" href="../css/phone-styles.css">
     <link rel="stylesheet" media="screen and (min-width: 961px)" href="../css/desktop-styles.css">
   </head>
-  <body id="body" onload="loadImagesAll(); activeButtons(); checkCookies();">
+  <body id="body" onload="loadImagesAll(); activeButtons(); checkCookies(); resetCurrentCategory();">
     <div id="header" class="inline">
       <div id="top-buttons">
         <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="../images/sort.png" alt="..." class="three-streak-button-img"></button>
@@ -21,12 +21,12 @@
       </div>
       <nav id="nav-top">
         <ul id="nav-top-buttons"> <!-- navbuttons -->
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll();">Alle</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showFavorittar();">Favorittar</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portrett</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll(); setCurrentCategory('all');">Alle</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showFavorittar(); setCurrentCategory('fav');">Favorittar</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning(); setCurrentCategory('ste');">Stemning</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr(); setCurrentCategory('dyr');">Dyr</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur(); setCurrentCategory('nat');">Natur</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett(); setCurrentCategory('por');">Portrett</button></li>
         </ul>
       </nav>
       <div id="logo"> <!-- logo -->

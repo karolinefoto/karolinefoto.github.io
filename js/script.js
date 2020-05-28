@@ -79,7 +79,7 @@ function loadImagesFavorittar(){
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxFavorittar" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/favorittar/fav" + u +".jpg");
+    photo.setAttribute("src", "../photos/fav" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgFavorittar" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -118,7 +118,7 @@ function loadImagesStemning() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxStemning" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/stemning/ste" + u +".jpg");
+    photo.setAttribute("src", "../photos/ste" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgStemning" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -157,7 +157,7 @@ function loadImagesNatur() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxNatur" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/natur/nat" + u +".jpg");
+    photo.setAttribute("src", "../photos/nat" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgNatur" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -196,7 +196,7 @@ function loadImagesDyr() {
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxDyr" + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/dyr/dyr" + u +".jpg");
+    photo.setAttribute("src", "../photos/dyr" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgDyr" + u);
     document.getElementById("column" + c).appendChild(box);
@@ -232,7 +232,7 @@ function loadImagesPortrett() {
     }
     var box = document.createElement('div');
     var photo = document.createElement('img');
-    var source = "../photos/portrett/por";
+    var source = "../photos/por";
     var jpg = ".jpg";
     box.setAttribute("class", "photo-box");
     box.setAttribute("id", "boxPortrett" + u);
@@ -323,64 +323,139 @@ function nextImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
   var oldNr = oldSrc.slice(-6 ,-4);
-  var grp = oldSrc.slice(-9, -6);
+  var oldGrp = oldSrc.slice(-9, -6);
   var newNr = Number(oldNr);
-  if (grp == "por" && newNr >= numberOfPicturesPortrett) {
-    newNr = 1;
+  var newGrp = oldGrp;
+  if (localStorage.getItem('currentCategory') == 'all') {
+    if (oldGrp == "por" && newNr >= numberOfPicturesPortrett) {
+      newNr = 1;
+      newGrp = 'ste';
+    }
+    else if (oldGrp == "nat" && newNr >= numberOfPicturesNatur) {
+      newNr = 1;
+      newGrp = 'dyr';
+    }
+    else if (oldGrp == "ste" && newNr >= numberOfPicturesStemning) {
+      newNr = 1;
+      newGrp = 'nat';
+    }
+    else if (oldGrp == "dyr" && newNr >= numberOfPicturesDyr) {
+      newNr = 1;
+      newGrp = 'por';
+    }
+    else if (oldGrp == "fav" && newNr >= numberOfPicturesFavorittar) {
+      newNr = 1;
+    }
+    else {
+      newNr++;
+    }
+  } else {
+    if (oldGrp == "por" && newNr >= numberOfPicturesPortrett) {
+      newNr = 1;
+    }
+    else if (oldGrp == "nat" && newNr >= numberOfPicturesNatur) {
+      newNr = 1;
+    }
+    else if (oldGrp == "ste" && newNr >= numberOfPicturesStemning) {
+      newNr = 1;
+    }
+    else if (oldGrp == "dyr" && newNr >= numberOfPicturesDyr) {
+      newNr = 1;
+    }
+    else if (oldGrp == "fav" && newNr >= numberOfPicturesFavorittar) {
+      newNr = 1;
+    }
+    else {
+      newNr++;
+    }
   }
-  else if (grp == "nat" && newNr >= numberOfPicturesNatur) {
-    newNr = 1;
-  }
-  else if (grp == "ste" && newNr >= numberOfPicturesStemning) {
-    newNr = 1;
-  }
-  else if (grp == "dyr" && newNr >= numberOfPicturesDyr) {
-    newNr = 1;
-  }
-  else if (grp == "fav" && newNr >= numberOfPicturesFavorittar) {
-    newNr = 1;
-  }
-  else {
-    newNr++;
-  }
+
 
   if (newNr < 10) {
     newNr = pad(newNr);
   }
-  var newSrc = oldSrc.replace(oldNr, newNr);
-  imageViewChild.setAttribute("src", newSrc);
+  var newerSrc = oldSrc.replace(oldNr, newNr);
+  var newestSrc = newerSrc.replace(oldGrp, newGrp);
+  imageViewChild.setAttribute("src", newestSrc);
 }
 
 function prevImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
   var oldNr = oldSrc.slice(-6 ,-4);
-  var grp = oldSrc.slice(-9, -6);
+  var oldGrp = oldSrc.slice(-9, -6);
   var newNr = Number(oldNr);
-  if (newNr <= 1) {
-    if (grp == "por") {
-      newNr = numberOfPicturesPortrett;
+  var newGrp = oldGrp;
+  if (localStorage.getItem('currentCategory') == 'all') {
+    if (newNr <= 1) {
+      if (oldGrp == "por") {
+        newNr = numberOfPicturesDyr;
+        newGrp = 'dyr';
+      }
+      if (oldGrp == "nat") {
+        newNr = numberOfPicturesStemning;
+        newGrp = 'ste';
+      }
+      if (oldGrp == "ste") {
+        newNr = numberOfPicturesPortrett;
+        newGrp = 'por';
+      }
+      if (oldGrp == "dyr") {
+        newNr = numberOfPicturesNatur;
+        newGrp = 'nat';
+      }
+      if (oldGrp == "fav") {
+        newNr = numberOfPicturesFavorittar;
+      }
+    } else {
+      newNr--;
     }
-    if (grp == "nat") {
-      newNr = numberOfPicturesNatur;
-    }
-    if (grp == "ste") {
-      newNr = numberOfPicturesStemning;
-    }
-    if (grp == "dyr") {
-      newNr = numberOfPicturesDyr;
-    }
-    if (grp == "fav") {
-      newNr = numberOfPicturesFavorittar;
-    }
-  } else {
-    newNr--;
   }
+  else {
+    if (newNr <= 1) {
+      if (oldGrp == "por") {
+        newNr = numberOfPicturesPortrett;
+      }
+      if (oldGrp == "nat") {
+        newNr = numberOfPicturesNatur;
+      }
+      if (oldGrp == "ste") {
+        newNr = numberOfPicturesStemning;
+      }
+      if (oldGrp == "dyr") {
+        newNr = numberOfPicturesDyr;
+      }
+      if (oldGrp == "fav") {
+        newNr = numberOfPicturesFavorittar;
+      }
+    } else {
+      newNr--;
+    }
+  }
+
   if (newNr < 10) {
     newNr = pad(newNr);
   }
-  var newSrc = oldSrc.replace(oldNr, newNr);
-  imageViewChild.setAttribute("src", newSrc);
+  var newerSrc = oldSrc.replace(oldNr, newNr);
+  var newestSrc = newerSrc.replace(oldGrp, newGrp);
+  imageViewChild.setAttribute("src", newestSrc);
+}
+
+function loopAround() {
+  var imageViewChild = document.getElementById("image-viewer-child");
+  var oldSrc = imageViewChild.getAttribute("src");
+  var grp = oldSrc.slice(-9, -6);
+  if (localStorage.getItem('currentCategory') == 'all') {
+    console.log('1');
+  }
+}
+
+function setCurrentCategory(category) {
+  localStorage.setItem('currentCategory', category);
+}
+
+function resetCurrentCategory() {
+  localStorage.setItem('currentCategory', 'all');
 }
 
 function pad(d) {
