@@ -45,11 +45,11 @@ function chooseColumn() {
   return columnNr;
 }
 var nr = 01;
-var numberOfPicturesStemning = 32;
-var numberOfPicturesNatur = 53;
+var numberOfPicturesStemning = 45;
+var numberOfPicturesNatur = 74;
 var numberOfPicturesDyr = 46;
-var numberOfPicturesPortrett = 07;
-var numberOfPicturesFavorittar = 08;
+var numberOfPicturesPortrett = 08;
+var numberOfPicturesFavorittar = 17;
 
 function removeImages() {
   const elem1 = document.getElementById("column1");
