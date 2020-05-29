@@ -535,8 +535,8 @@ function agreeToCookies() {
 }
 
 function checkCookies() {
-  if (localStorage.getItem('hasSeenCookieWarning') == 'yes') {
-    document.getElementById("cookie-warning-box").style.display="none";
+  if (localStorage.getItem('hasSeenCookieWarning') !== 'yes') {
+    document.getElementById("cookie-warning-box").style.display="block";
   }
 }
 
