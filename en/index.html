@@ -13,7 +13,7 @@
     <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 900px)" href="../css/phone-styles.css">
     <link rel="stylesheet" media="screen and (min-width: 901px)" href="../css/desktop-styles.css">
   </head>
-  <body id="body" onload="loadImagesAll(); activeButtons();">
+  <body id="body" onload="loadImagesAll(); activeButtons(); resetCurrentCategory();">
     <div id="header" class="inline">
       <div id="top-buttons">
         <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="../images/sort.png" alt="..." class="three-streak-button-img"></button>
@@ -21,12 +21,12 @@
       </div>
       <nav id="nav-top">
         <ul id="nav-top-buttons"> <!-- navbuttons -->
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll();">All</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showFavorittar();">Favorites</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Ambiance</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Animals</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Nature</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett();">Portraits</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll(); setCurrentCategory('all');">All</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showFavorittar(); setCurrentCategory('fav');">Favorites</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning(); setCurrentCategory('ste');">Ambiance</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr(); setCurrentCategory('dyr');">Animals</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur() setCurrentCategory('nat');;">Nature</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett() setCurrentCategory('por');;">Portraits</button></li>
         </ul>
       </nav>
       <div id="logo"> <!-- logo -->
@@ -60,7 +60,6 @@
       <div id="column3" class="column"></div>
       <div id="column4" class="column"></div>
     </div>
-
     <div id="nav-menu-2" class="phone-hidden desktop-hidden">
       <div id="nav-popup-menu">
         <div class="nav-button-close-div">
@@ -91,5 +90,4 @@
     </div>
   </body>
   <script type="text/javascript" src="../js/script.js"></script>
-
 </html>
