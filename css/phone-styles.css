@@ -137,6 +137,11 @@ nav {
   margin-right: 10px;
 }
 
+.home-button {
+  height: auto;
+  width: 100px;
+}
+
 #nav-top {
   display: none;
 }

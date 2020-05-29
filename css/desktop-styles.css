@@ -376,6 +376,11 @@ button {
   cursor: pointer;
 }
 
+.home-button {
+  height: auto;
+  width: 100px;
+}
+
 .active-header-button {
   border-bottom: white solid 4px;
   height: 54px;
