@@ -114,8 +114,8 @@ nav {
 .three-streak-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .info-button {
@@ -130,8 +130,8 @@ nav {
 .info-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #nav-top {
