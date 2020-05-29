@@ -82,6 +82,7 @@ function loadImagesFavorittar(){
     photo.setAttribute("src", "../photos/fav" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgFavorittar" + u);
+    photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxFavorittar" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
@@ -121,6 +122,7 @@ function loadImagesStemning() {
     photo.setAttribute("src", "../photos/ste" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgStemning" + u);
+    photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxStemning" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
@@ -160,6 +162,7 @@ function loadImagesNatur() {
     photo.setAttribute("src", "../photos/nat" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgNatur" + u);
+    photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxNatur" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
@@ -199,6 +202,7 @@ function loadImagesDyr() {
     photo.setAttribute("src", "../photos/dyr" + u +".jpg");
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgDyr" + u);
+    photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxDyr" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
@@ -240,6 +244,7 @@ function loadImagesPortrett() {
     photo.setAttribute("src", source + u + jpg);
     photo.setAttribute("class", "photo");
     photo.setAttribute("id", "imgPortrett" + u);
+    photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
     document.getElementById("boxPortrett" + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
