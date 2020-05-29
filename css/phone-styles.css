@@ -13,6 +13,9 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 h1 {
@@ -114,8 +117,8 @@ nav {
 .three-streak-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .info-button {
@@ -130,8 +133,13 @@ nav {
 .info-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.home-button {
+  height: auto;
+  width: 100px;
 }
 
 #nav-top {
@@ -811,7 +819,9 @@ button:hover {
   background-color: #eee;
   transition: 200ms;
   shape-outside: polygon(0 0, 100% 0, 85% 64px, 0 64px);
+  -webkit-shape-outside: polygon(0 0, 100% 0, 85% 64px, 0 64px);
   clip-path: polygon(0 0, 100% 0, 85% 64px, 0 64px);
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 64px, 0 64px);
   shape-margin: 0px;
   float: left;
   margin-right: -25px !important;
@@ -836,7 +846,9 @@ button:hover {
   float: right;
   transition: 200ms;
   shape-outside: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
+  -webkit-shape-outside: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
   clip-path: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
+  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
   shape-margin: 0px;
   margin-left: -25px !important;
 }
