@@ -13,6 +13,9 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 h1 {
@@ -114,8 +117,8 @@ nav {
 .three-streak-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .info-button {
@@ -130,8 +133,13 @@ nav {
 .info-button-img {
   display: block;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.home-button {
+  height: auto;
+  width: 100px;
 }
 
 #nav-top {
@@ -227,6 +235,7 @@ nav {
   height: 60px;
   display: inline-block;
   vertical-align: bottom;
+  display: none;
 }
 
 #header-text {
@@ -238,7 +247,7 @@ nav {
   position: fixed;
   right: 0px;
   height: 100%;
-  width: 360px;
+  width: 320px;
   background-color: #ddd;
   overflow: scroll;
 }
@@ -589,7 +598,7 @@ button:hover {
 
 .faq-doc {
   width: calc(100% - 12px);
-  min-width: 360px;
+  min-width: 320px;
   height: calc(100vh - 100px);
   margin-top: 8px;
   margin-left: 6px;
@@ -600,15 +609,21 @@ button:hover {
 
 #om-meg-doc {
   margin-right: 0;
+  overflow-x: hidden;
 }
 
 #om-meg-doc > iframe {
-  width: 100%;
-  height: calc(100vh - 155px);
+  width: 520px;
+  height: calc(100vh - 75px);
   max-width: 850px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: -100px;
+  margin-right: -100px;
+  margin-top: -80px;
   display: block;
+}
+
+#om-meg-dov > iframe > #document > html {
+  overflow-x: hidden;
 }
 
 #kontakt-form-div {
@@ -640,7 +655,7 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 360px;
+  width: 320px;
   z-index: 5;
   border: none;
 }
@@ -666,7 +681,7 @@ button:hover {
   right: 10px;
   bottom: 10px;
   height: max-content;
-  width: max-content;
+  margin-left: 10px;
   border-radius: 8px;
   background-color: orange;
   box-shadow: 0 0 1px black;
@@ -704,7 +719,7 @@ button:hover {
   position: fixed;
   right: 0px;
   height: 100%;
-  width: 360px;
+  width: 320px;
   background-color: #ddd;
   overflow: auto;
 }
@@ -739,7 +754,7 @@ button:hover {
 
 #sidebar-links > a > div > div {
   display: inline-block;
-  width: 250px;
+  width: 212px;
 }
 
 #sidebar-links > a > div > div > h3 {
@@ -782,6 +797,7 @@ button:hover {
   color: black;
   line-height: 1.25;
   font-weight: lighter;
+  display: none;
 }
 
 #sidebar-links > div > a > div > img {
@@ -811,7 +827,9 @@ button:hover {
   background-color: #eee;
   transition: 200ms;
   shape-outside: polygon(0 0, 100% 0, 85% 64px, 0 64px);
+  -webkit-shape-outside: polygon(0 0, 100% 0, 85% 64px, 0 64px);
   clip-path: polygon(0 0, 100% 0, 85% 64px, 0 64px);
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 64px, 0 64px);
   shape-margin: 0px;
   float: left;
   margin-right: -25px !important;
@@ -836,7 +854,9 @@ button:hover {
   float: right;
   transition: 200ms;
   shape-outside: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
+  -webkit-shape-outside: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
   clip-path: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
+  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 64px, 0 64px);
   shape-margin: 0px;
   margin-left: -25px !important;
 }
