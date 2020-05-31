@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" media="screen and (max-width: 320px)" href="../css/tiny-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 321px) and (max-width: 960px)" href="../css/phone-styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 359px)" href="../css/tiny-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 360px) and (max-width: 960px)" href="../css/phone-styles.css">
     <link rel="stylesheet" media="screen and (min-width: 961px)" href="../css/desktop-styles.css">
   </head>
   <body id="body" onload="loadImagesAll(); activeButtons(); checkCookies(); resetCurrentCategory();">
@@ -67,24 +67,24 @@
         </div>
         <div class="">
           <div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showFavorittar();">Favorittar</button>
+            <button type="button" name="button" class="header-button nav-center" onclick="showFavorittar(); setCurrentCategory('fav');">Favorittar</button>
           </div><!--
        --><div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showAll();">Alle</button>
+            <button type="button" name="button" class="header-button nav-center" onclick="showAll(); setCurrentCategory('all');">Alle</button>
           </div>
         </div>
         <!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showStemning();">Stemning</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="showStemning(); setCurrentCategory('ste');">Stemning</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showDyr();">Dyr</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="showDyr(); setCurrentCategory('dyr');">Dyr</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showNatur();">Natur</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="showNatur(); setCurrentCategory('nat');">Natur</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showPortrett();">Portrett</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="showPortrett(); setCurrentCategory('por');">Portrett</button>
         </div>
       </div>
     </div>
