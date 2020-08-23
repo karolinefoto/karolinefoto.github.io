@@ -1,11 +1,11 @@
 NORSK:
-Fotografia er beskytta under Opphavsrett © 2020 Karoline Myskja, og skal ikkje brukast, personleg eller kommersielt utan eksplisitt løyve.
+Fotografia er beskytta under Opphavsrett © 2020 Karoline Myskja & Daniel Svindseth Pettersen, og skal ikkje brukast, personleg eller kommersielt utan eksplisitt løyve.
 
 Resten av Nettsida er under MIT-Lisensen.
 
 
 ENGLISH:
-The photographies are under Copyright © 2020 Karoline Myskja, and shall not be
+The photographies are under Copyright © 2020 Karoline Myskja & Daniel Svindseth Pettersen, and shall not be
 used for any purpose, personal or commercial, without explicit permission.
 
 The rest of the Website is licensed under the MIT License.
