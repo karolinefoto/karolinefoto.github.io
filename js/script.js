@@ -68,12 +68,7 @@ function loadImagesFavorittar(){
   var u = 0;
   var c = 1;
   while (i < numberOfPicturesFavorittar) {
-    if (nr < 10) {
-      u = pad(nr);
-    }
-    else {
-      u = nr;
-    }
+    u = pad(nr);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
@@ -108,12 +103,7 @@ function loadImagesStemning() {
   var u = 0;
   var c = 1;
   while (i < numberOfPicturesStemning) {
-    if (nr < 10) {
-      u = pad(nr);
-    }
-    else {
-      u = nr;
-    }
+    u = pad(nr);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
@@ -148,12 +138,7 @@ function loadImagesNatur() {
   var u = 0;
   var c = 1;
   while (i < numberOfPicturesNatur) {
-    if (nr < 10) {
-      u = pad(nr);
-    }
-    else {
-      u = nr;
-    }
+    u = pad(nr);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
@@ -188,12 +173,13 @@ function loadImagesDyr() {
   var u = 0;
   var c = 1;
   while (i < numberOfPicturesDyr) {
-    if (nr < 10) {
+    /*if (nr < 10) {
       u = pad(nr);
     }
     else {
       u = nr;
-    }
+    }*/
+    u = pad(nr);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
@@ -228,12 +214,7 @@ function loadImagesPortrett() {
   var u = 0;
   var c = 1;
   while (i < numberOfPicturesPortrett) {
-    if (nr < 10) {
-      u = pad(nr);
-    }
-    else {
-      u = nr;
-    }
+    u = pad(nr);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     var source = "../photos/por";
@@ -464,7 +445,11 @@ function resetCurrentCategory() {
 }
 
 function pad(d) {
-  return (d < 10) ? '0' + d.toString() : toString();
+  if (d < 100 && d > 9) {
+    return (d < 100) ? '0' + d.toString() : toString();
+  } else {
+    return (d < 10) ? '00' + d.toString() : toString();
+  }
 }
 
 function keyPress() {
