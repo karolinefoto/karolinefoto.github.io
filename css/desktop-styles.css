@@ -370,8 +370,10 @@ button {
   border-radius: 6px;
   border-width: 0;
   border-color: #fff;
-  background-color: #644D99;
-  color: white;
+  /*background-color: #644D99;*/
+  /*color: white;*/
+  background-color: #0000;
+  color: #000;
   outline: 0;
   cursor: pointer;
 }

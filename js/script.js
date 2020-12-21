@@ -1,3 +1,32 @@
+//
+// INSTRUKSJONAR
+// Bytt ut tala nedanfor med kor mange bilder som ligg totalt i dei tilsvarande mappene
+//
+// Når du legg til eit nytt bilde, følger du det eksisterande namnemønsteret t.d. dyr057 for det 57ande bildet i kategorien dyr.
+// Portrett = por
+// Dyr = dyr
+// Natur = nat
+// Stemning = ste
+// Favorittar = fav
+//
+// Skriv Talet på Bilder i Kategorien 'Stemning'
+var numberOfPicturesStemning = 45;
+
+// Skriv Talet på Bilder i Kategorien 'Natur'
+var numberOfPicturesNatur = 74;
+
+// Skriv Talet på Bilder i Kategorien 'Dyr'
+var numberOfPicturesDyr = 46;
+
+// Skriv Talet på Bilder i Kategorien 'Portrett'
+var numberOfPicturesPortrett = 8;
+
+// Skriv Talet på Bilder i Kategorien 'Favorittar'
+var numberOfPicturesFavorittar = 17;
+
+// Det var det :)
+
+
 // Unused block of code
 /*
 function createColumns(){
@@ -45,11 +74,7 @@ function chooseColumn() {
   return columnNr;
 }
 var nr = 01;
-var numberOfPicturesStemning = 45;
-var numberOfPicturesNatur = 74;
-var numberOfPicturesDyr = 46;
-var numberOfPicturesPortrett = 08;
-var numberOfPicturesFavorittar = 17;
+
 
 function removeImages() {
   const elem1 = document.getElementById("column1");
@@ -308,10 +333,14 @@ function closeViewer() {
 function nextImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
-  var oldNr = oldSrc.slice(-6 ,-4);
-  var oldGrp = oldSrc.slice(-9, -6);
+  var oldNr = oldSrc.slice(-7 ,-4);
+  console.log(oldNr);
+  var oldGrp = oldSrc.slice(-10, -7);
+  console.log(oldGrp);
   var newNr = Number(oldNr);
+  console.log(newNr);
   var newGrp = oldGrp;
+  console.log(newGrp);
   if (localStorage.getItem('currentCategory') == 'all') {
     if (oldGrp == "por" && newNr >= numberOfPicturesPortrett) {
       newNr = 1;
@@ -356,10 +385,12 @@ function nextImage() {
     }
   }
 
-
-  if (newNr < 10) {
+  /*
+  if (newNr < 100) {
     newNr = pad(newNr);
   }
+  */
+  newNr = pad(newNr);
   var newerSrc = oldSrc.replace(oldNr, newNr);
   var newestSrc = newerSrc.replace(oldGrp, newGrp);
   imageViewChild.setAttribute("src", newestSrc);
@@ -368,8 +399,8 @@ function nextImage() {
 function prevImage() {
   var imageViewChild = document.getElementById("image-viewer-child");
   var oldSrc = imageViewChild.getAttribute("src");
-  var oldNr = oldSrc.slice(-6 ,-4);
-  var oldGrp = oldSrc.slice(-9, -6);
+  var oldNr = oldSrc.slice(-7 ,-4);
+  var oldGrp = oldSrc.slice(-10, -7);
   var newNr = Number(oldNr);
   var newGrp = oldGrp;
   if (localStorage.getItem('currentCategory') == 'all') {
@@ -418,10 +449,12 @@ function prevImage() {
       newNr--;
     }
   }
-
+  /*
   if (newNr < 10) {
     newNr = pad(newNr);
   }
+  */
+  newNr = pad(newNr);
   var newerSrc = oldSrc.replace(oldNr, newNr);
   var newestSrc = newerSrc.replace(oldGrp, newGrp);
   imageViewChild.setAttribute("src", newestSrc);
