@@ -499,6 +499,8 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  color: black;
+  border: black solid 1px;
 }
 
 #cookie-warning-box {
