@@ -547,7 +547,7 @@ button:hover {
   height: 100%;
   width: 360px;
   background-color: #ddd;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 #sidebar-image {
