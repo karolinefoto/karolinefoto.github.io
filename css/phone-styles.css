@@ -925,3 +925,58 @@ button:hover {
   background-color: #999;
   transition: 1ms;
 }
+
+#welcome {
+  background-color: hsla(0, 100%, 0%, 0.5);
+  background-image: url("../images/welcome.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0.96);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 120px 180px 40px auto;
+  grid-template-columns: auto 320px auto;
+  position: fixed;
+  top: 0;
+  z-index: 90000;
+  transition: .5s cubic-bezier(.6,-0.18,.74,.05);
+  backdrop-filter: blur(2px);
+}
+
+h2.welcome-message {
+  height: auto;
+  width: auto;
+  grid-column: 2;
+  grid-row: 2;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  line-height: 47px;
+  text-shadow: 0 1px 1px black;
+}
+
+p.welcome-message {
+  height: auto;
+  width: auto;
+  grid-column: 2;
+  grid-row: 3;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  text-shadow: 0 1px 1px black;
+}
+
+button.welcome-message {
+  height: auto;
+  width: auto;
+  grid-column: 2;
+  grid-row: 4;
+  background-color: hsla(258, 50%, 60%, 1);
+  box-shadow: 0 1px 1px black;
+}
+
+button.welcome-message:hover {
+  background-color: hsla(258, 50%, 55%, 1);
+  color: white;
+}

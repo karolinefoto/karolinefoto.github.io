@@ -3,51 +3,16 @@
 // Bytt ut tala nedanfor med kor mange bilder som ligg totalt i dei tilsvarande mappene
 //
 // Når du legg til eit nytt bilde, følger du det eksisterande namnemønsteret t.d. dyr057 for det 57ande bildet i kategorien dyr.
-// Portrett = por
-// Dyr = dyr
-// Natur = nat
-// Stemning = ste
-// Favorittar = fav
 //
-// Skriv Talet på Bilder i Kategorien 'Stemning'
-var numberOfPicturesStemning = 45;
-
-// Skriv Talet på Bilder i Kategorien 'Natur'
-var numberOfPicturesNatur = 74;
-
-// Skriv Talet på Bilder i Kategorien 'Dyr'
-var numberOfPicturesDyr = 46;
-
-// Skriv Talet på Bilder i Kategorien 'Portrett'
-var numberOfPicturesPortrett = 8;
-
-// Skriv Talet på Bilder i Kategorien 'Favorittar'
-var numberOfPicturesFavorittar = 17;
+// SKRIV TALET PÅ BILDER I KVAR KATEGORI
+var DyrNr = 67;
+var PorNr = 19;
+var LanNr = 44;
+var PlaNr = 78;
+var DivNr = 76;
+var FavNr = 30;
 
 // Det var det :)
-
-
-// Unused block of code
-/*
-function createColumns(){
-  var column1 = document.createElement('div');
-  var column2 = document.createElement('div');
-  var column3 = document.createElement('div');
-  var column4 = document.createElement('div');
-  column1.setAttribute("class", "column");
-  column2.setAttribute("class", "column");
-  column3.setAttribute("class", "column");
-  column4.setAttribute("class", "column");
-  column1.setAttribute("id", "column1");
-  column2.setAttribute("id", "column2");
-  column3.setAttribute("id", "column3");
-  column4.setAttribute("id", "column4");
-  document.body.appendChild(column1);
-  document.body.appendChild(column2);
-  document.body.appendChild(column3);
-  document.body.appendChild(column4);
-}
-*/
 
 function activeButtons() {
   //Make buttons active
@@ -75,7 +40,6 @@ function chooseColumn() {
 }
 var nr = 01;
 
-
 function removeImages() {
   const elem1 = document.getElementById("column1");
   elem1.innerHTML = '';
@@ -87,24 +51,28 @@ function removeImages() {
   elem4.innerHTML = '';
 }
 
-function loadImagesFavorittar(){
+function loadImages(category, categoryNr){
+  console.log(category);
   var i = 0;
-  nr = 1;
-  var u = 0;
+  var u;
   var c = 1;
-  while (i < numberOfPicturesFavorittar) {
+  nr = 1;
+  //let categoryNr = category + 'Nr';
+  console.log(categoryNr);
+  while (i < categoryNr) {
     u = pad(nr);
+    console.log(u);
     var box = document.createElement('div');
     var photo = document.createElement('img');
     box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "boxFavorittar" + u);
+    box.setAttribute("id", "box" + category + u);
     box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/fav" + u +".jpg");
+    photo.setAttribute("src", "../photos/" + category + u +".jpg");
     photo.setAttribute("class", "photo");
-    photo.setAttribute("id", "imgFavorittar" + u);
+    photo.setAttribute("id", "img" + category + u);
     photo.setAttribute("loading", "lazy");
     document.getElementById("column" + c).appendChild(box);
-    document.getElementById("boxFavorittar" + u).appendChild(photo);
+    document.getElementById("box" + category + u).appendChild(photo);
     photo.setAttribute("onclick", "imageViewer(src);");
     nr++;
     i++;
@@ -117,173 +85,25 @@ function loadImagesFavorittar(){
   }
 }
 
-function showFavorittar() {
+function show(category, categoryNr) {
   removeImages();
-  loadImagesFavorittar();
-}
-
-function loadImagesStemning() {
-  var i = 0;
-  nr = 1;
-  var u = 0;
-  var c = 1;
-  while (i < numberOfPicturesStemning) {
-    u = pad(nr);
-    var box = document.createElement('div');
-    var photo = document.createElement('img');
-    box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "boxStemning" + u);
-    box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/ste" + u +".jpg");
-    photo.setAttribute("class", "photo");
-    photo.setAttribute("id", "imgStemning" + u);
-    photo.setAttribute("loading", "lazy");
-    document.getElementById("column" + c).appendChild(box);
-    document.getElementById("boxStemning" + u).appendChild(photo);
-    photo.setAttribute("onclick", "imageViewer(src);");
-    nr++;
-    i++;
-    if (c < 4){
-      c++;
-    }
-    else {
-      c = 1;
-    }
-  }
-}
-
-function showStemning() {
-  removeImages();
-  loadImagesStemning();
-}
-
-function loadImagesNatur() {
-  var i = 0;
-  nr = 1;
-  var u = 0;
-  var c = 1;
-  while (i < numberOfPicturesNatur) {
-    u = pad(nr);
-    var box = document.createElement('div');
-    var photo = document.createElement('img');
-    box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "boxNatur" + u);
-    box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/nat" + u +".jpg");
-    photo.setAttribute("class", "photo");
-    photo.setAttribute("id", "imgNatur" + u);
-    photo.setAttribute("loading", "lazy");
-    document.getElementById("column" + c).appendChild(box);
-    document.getElementById("boxNatur" + u).appendChild(photo);
-    photo.setAttribute("onclick", "imageViewer(src);");
-    nr++;
-    i++;
-    if (c < 4){
-      c++;
-    }
-    else {
-      c = 1;
-    }
-  }
-}
-
-function showNatur() {
-  removeImages();
-  loadImagesNatur();
-}
-
-function loadImagesDyr() {
-  var i = 0;
-  nr = 1;
-  var u = 0;
-  var c = 1;
-  while (i < numberOfPicturesDyr) {
-    /*if (nr < 10) {
-      u = pad(nr);
-    }
-    else {
-      u = nr;
-    }*/
-    u = pad(nr);
-    var box = document.createElement('div');
-    var photo = document.createElement('img');
-    box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "boxDyr" + u);
-    box.setAttribute("focusable", "0");
-    photo.setAttribute("src", "../photos/dyr" + u +".jpg");
-    photo.setAttribute("class", "photo");
-    photo.setAttribute("id", "imgDyr" + u);
-    photo.setAttribute("loading", "lazy");
-    document.getElementById("column" + c).appendChild(box);
-    document.getElementById("boxDyr" + u).appendChild(photo);
-    photo.setAttribute("onclick", "imageViewer(src);");
-    nr++;
-    i++;
-    if (c < 4){
-      c++;
-    }
-    else {
-      c = 1;
-    }
-  }
-}
-
-function showDyr() {
-  removeImages();
-  loadImagesDyr();
-}
-
-function loadImagesPortrett() {
-  var i = 0;
-  nr = 1;
-  var u = 0;
-  var c = 1;
-  while (i < numberOfPicturesPortrett) {
-    u = pad(nr);
-    var box = document.createElement('div');
-    var photo = document.createElement('img');
-    var source = "../photos/por";
-    var jpg = ".jpg";
-    box.setAttribute("class", "photo-box");
-    box.setAttribute("id", "boxPortrett" + u);
-    box.setAttribute("focusable", "0");
-    photo.setAttribute("src", source + u + jpg);
-    photo.setAttribute("class", "photo");
-    photo.setAttribute("id", "imgPortrett" + u);
-    photo.setAttribute("loading", "lazy");
-    document.getElementById("column" + c).appendChild(box);
-    document.getElementById("boxPortrett" + u).appendChild(photo);
-    photo.setAttribute("onclick", "imageViewer(src);");
-    nr++;
-    i++;
-    if (c < 4){
-      c++;
-    } else {
-      c = 1;
-    }
-  }
-}
-
-function showPortrett() {
-  removeImages();
-  loadImagesPortrett();
-}
-
-function loadImagesAll() {
-  loadImagesStemning();
-  loadImagesNatur();
-  loadImagesDyr();
-  loadImagesPortrett();
+  loadImages(category, categoryNr);
 }
 
 function showAll() {
   removeImages();
-  loadImagesAll();
+  loadImages('dyr', DyrNr);
+  loadImages('por', PorNr);
+  loadImages('lan', LanNr);
+  loadImages('pla', PlaNr);
+  loadImages('div', DivNr);
 }
 
+/*
 function clickImage() {
   getElementById();
 }
+*/
 
 function imageViewer(inputImage) {
   document.addEventListener("keyup", keyPress);
@@ -342,54 +162,55 @@ function nextImage() {
   var newGrp = oldGrp;
   console.log(newGrp);
   if (localStorage.getItem('currentCategory') == 'all') {
-    if (oldGrp == "por" && newNr >= numberOfPicturesPortrett) {
-      newNr = 1;
-      newGrp = 'ste';
-    }
-    else if (oldGrp == "nat" && newNr >= numberOfPicturesNatur) {
-      newNr = 1;
-      newGrp = 'dyr';
-    }
-    else if (oldGrp == "ste" && newNr >= numberOfPicturesStemning) {
-      newNr = 1;
-      newGrp = 'nat';
-    }
-    else if (oldGrp == "dyr" && newNr >= numberOfPicturesDyr) {
+    if (oldGrp == "dyr" && newNr >= DyrNr) {
       newNr = 1;
       newGrp = 'por';
     }
-    else if (oldGrp == "fav" && newNr >= numberOfPicturesFavorittar) {
+    else if (oldGrp == "por" && newNr >= PorNr) {
+      newNr = 1;
+      newGrp = 'lan';
+    }
+    else if (oldGrp == "lan" && newNr >= LanNr) {
+      newNr = 1;
+      newGrp = 'pla';
+    }
+    else if (oldGrp == "pla" && newNr >= PlaNr) {
+      newNr = 1;
+      newGrp = 'div';
+    }
+    else if (oldGrp == "div" && newNr >= DivNr) {
+      newNr = 1;
+      newGrp = 'dyr';
+    }
+    else if (oldGrp == "fav" && newNr >= FavNr) {
       newNr = 1;
     }
     else {
       newNr++;
     }
   } else {
-    if (oldGrp == "por" && newNr >= numberOfPicturesPortrett) {
+    if (oldGrp == "por" && newNr >= PorNr) {
       newNr = 1;
     }
-    else if (oldGrp == "nat" && newNr >= numberOfPicturesNatur) {
+    else if (oldGrp == "lan" && newNr >= LanNr) {
       newNr = 1;
     }
-    else if (oldGrp == "ste" && newNr >= numberOfPicturesStemning) {
+    else if (oldGrp == "pla" && newNr >= PlaNr) {
       newNr = 1;
     }
-    else if (oldGrp == "dyr" && newNr >= numberOfPicturesDyr) {
+    else if (oldGrp == "dyr" && newNr >= DyrNr) {
       newNr = 1;
     }
-    else if (oldGrp == "fav" && newNr >= numberOfPicturesFavorittar) {
+    else if (oldGrp == "div" && newNr >= DivNr) {
+      newNr = 1;
+    }
+    else if (oldGrp == "fav" && newNr >= FavNr) {
       newNr = 1;
     }
     else {
       newNr++;
     }
   }
-
-  /*
-  if (newNr < 100) {
-    newNr = pad(newNr);
-  }
-  */
   newNr = pad(newNr);
   var newerSrc = oldSrc.replace(oldNr, newNr);
   var newestSrc = newerSrc.replace(oldGrp, newGrp);
@@ -405,24 +226,28 @@ function prevImage() {
   var newGrp = oldGrp;
   if (localStorage.getItem('currentCategory') == 'all') {
     if (newNr <= 1) {
-      if (oldGrp == "por") {
-        newNr = numberOfPicturesDyr;
-        newGrp = 'dyr';
+      if (oldGrp == "dyr") {
+        newNr = DivNr;
+        newGrp = 'div';
       }
-      if (oldGrp == "nat") {
-        newNr = numberOfPicturesStemning;
-        newGrp = 'ste';
+      if (oldGrp == "div") {
+        newNr = PlaNr;
+        newGrp = 'pla';
       }
-      if (oldGrp == "ste") {
-        newNr = numberOfPicturesPortrett;
+      if (oldGrp == "pla") {
+        newNr = LanNr;
+        newGrp = 'lan';
+      }
+      if (oldGrp == "lan") {
+        newNr = PorNr;
         newGrp = 'por';
       }
-      if (oldGrp == "dyr") {
-        newNr = numberOfPicturesNatur;
-        newGrp = 'nat';
+      if (oldGrp == "por") {
+        newNr = DyrNr;
+        newGrp = 'dyr';
       }
       if (oldGrp == "fav") {
-        newNr = numberOfPicturesFavorittar;
+        newNr = FavNr;
       }
     } else {
       newNr--;
@@ -431,29 +256,27 @@ function prevImage() {
   else {
     if (newNr <= 1) {
       if (oldGrp == "por") {
-        newNr = numberOfPicturesPortrett;
-      }
-      if (oldGrp == "nat") {
-        newNr = numberOfPicturesNatur;
-      }
-      if (oldGrp == "ste") {
-        newNr = numberOfPicturesStemning;
+        newNr = PorNr;
       }
       if (oldGrp == "dyr") {
-        newNr = numberOfPicturesDyr;
+        newNr = DyrNr;
+      }
+      if (oldGrp == "lan") {
+        newNr = LanNr;
+      }
+      if (oldGrp == "pla") {
+        newNr = PlaNr;
+      }
+      if (oldGrp == "div") {
+        newNr = DivNr;
       }
       if (oldGrp == "fav") {
-        newNr = numberOfPicturesFavorittar;
+        newNr = FavNr;
       }
     } else {
       newNr--;
     }
   }
-  /*
-  if (newNr < 10) {
-    newNr = pad(newNr);
-  }
-  */
   newNr = pad(newNr);
   var newerSrc = oldSrc.replace(oldNr, newNr);
   var newestSrc = newerSrc.replace(oldGrp, newGrp);
@@ -528,30 +351,6 @@ function toggleMenu() {
   }
 }
 
-/*
-function selectLanguage(language) {
-//  document.getElementsByClassName("lang-no").style.display="none";
-//  document.getElementsByClassName("lang-en").style.display="none";
-//  document.getElementsByClassName(language).style.display = "unset";
-//  return false;
-  var y = document.getElementsByClassName("lang-no");
-  var u;
-  for (u = 0; u < y.length; u++) {
-   y[u].style.display = "none";
-  }
-  var z = document.getElementsByClassName("lang-en");
-  var o;
-  for (o = 0; o < z.length; o++) {
-   z[o].style.display = "none";
-  }
-  var x = document.getElementsByClassName(language);
-  var i;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "";
-  }
-}
-*/
-
 function agreeToCookies() {
   localStorage.setItem('hasSeenCookieWarning', 'yes');
   document.getElementById("cookie-warning-box").style.display="none";
@@ -569,4 +368,15 @@ function showKontaktForm() {
 
 function hideKontaktForm() {
   document.getElementById("kontakt-form-div").style.display="none";
+}
+
+function oki() {
+  document.getElementById("welcome").style.top="-100vh";
+  localStorage.setItem('hasBeenWelcomed', 'yes');
+}
+
+function checkWelcome() {
+  if (localStorage.getItem('hasBeenWelcomed') !== 'yes') {
+    document.getElementById("welcome").style.display="grid";
+  }
 }

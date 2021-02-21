@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" media="screen and (max-width: 359px)" href="../css/tiny-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 360px) and (max-width: 900px)" href="../css/phone-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 901px)" href="../css/desktop-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 360px) and (max-width: 1080px)" href="../css/phone-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 1081px)" href="../css/desktop-styles.css">
   </head>
-  <body id="body" onload="loadImagesAll(); activeButtons(); resetCurrentCategory();">
+  <body id="body" onload="showAll(); activeButtons(); checkWelcome(); resetCurrentCategory();">
     <div id="header" class="inline">
       <div id="top-buttons">
         <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="../images/sort.png" alt="..." class="three-streak-button-img"></button>
@@ -22,11 +22,12 @@
       <nav id="nav-top">
         <ul id="nav-top-buttons"> <!-- navbuttons -->
           <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll(); setCurrentCategory('all');">All</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showFavorittar(); setCurrentCategory('fav');">Favorites</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showStemning(); setCurrentCategory('ste');">Ambiance</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showDyr(); setCurrentCategory('dyr');">Animals</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="showNatur() setCurrentCategory('nat');;">Nature</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right" onclick="showPortrett() setCurrentCategory('por');;">Portraits</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('fav', FavNr); setCurrentCategory('fav');">Favourites</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('dyr', DyrNr); setCurrentCategory('dyr');">Animals</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('por', PorNr); setCurrentCategory('por');">Portraits</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('lan', LanNr); setCurrentCategory('lan');">Landscapes</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('pla', PlaNr); setCurrentCategory('pla');">Plants & Woods</button></li>
+          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right"  onclick="show('div', DivNr); setCurrentCategory('div');">Misc.</button></li>
         </ul>
       </nav>
       <div id="logo"> <!-- logo -->
@@ -66,28 +67,39 @@
           <button type="button" name="button" class="nav-center nav-button-close" onclick="toggleMenu();">X</button>
         </div>
         <div class="">
-          <div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showFavorittar(); setCurrentCategory('fav');">Favorittar</button>
+          <div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="show('dyr', DyrNr); setCurrentCategory('dyr');">Animals</button>
+          </div><!--
+       --><div class="nav-button-small">
+            <button type="button" name="button" class="header-button nav-center" onclick="show('por', PorNr); setCurrentCategory('por');">Portraits</button>
           </div><!--
        --><div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showAll(); setCurrentCategory('all');">Alle</button>
+            <button type="button" name="button" class="header-button nav-center" onclick="showAll(); setCurrentCategory('all');">All</button>
           </div>
+
         </div>
         <!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showStemning(); setCurrentCategory('ste');">Stemning</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="show('lan', LanNr); setCurrentCategory('lan');">Landscapes</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showDyr(); setCurrentCategory('dyr');">Dyr</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="show('pla', PlaNr); setCurrentCategory('pla');">Plants</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showNatur(); setCurrentCategory('nat');">Natur</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="show('div', DivNr); setCurrentCategory('div');">Misc.</button>
         </div><!--
      --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="showPortrett(); setCurrentCategory('por');">Portrett</button>
+          <button type="button" name="button" class="header-button nav-center" onclick="show('fav', FavNr); setCurrentCategory('fav');">Favourites</button>
         </div>
       </div>
     </div>
+
+    <div id="welcome" style="display: none;">
+      <h2 class="welcome-message">Welcome to KarolineFoto!</h2>
+      <p class="welcome-message">The photos are taken by ourselves and are taken on a hobby-basis. I update the site once in a while when I have something new to share.</p>
+      <button class="welcome-message" onclick="oki();">Show me the photos!</button>
+    </div>
+
   </body>
   <script type="text/javascript" src="../js/script.js"></script>
 </html>
