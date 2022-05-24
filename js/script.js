@@ -10,7 +10,7 @@ var PorNr = 19;
 var LanNr = 44;
 var PlaNr = 78;
 var DivNr = 74;
-var FavNr = 32;
+var FavNr = 33;
 
 // Det var det :)
 
