@@ -6,7 +6,7 @@
 //
 // SKRIV TALET PÅ BILDER I KVAR KATEGORI
 var DyrNr = 67;
-var PorNr = 12;
+var PorNr = 16;
 var LanNr = 44;
 var PlaNr = 78;
 var DivNr = 74;
