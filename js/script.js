@@ -11,14 +11,6 @@ var LanNr = 44;
 var PlaNr = 78;
 var DivNr = 74;
 var FavNr = 34;
-var FavNr = 32;
-=======
-var PorNr = 17;
-var LanNr = 44;
-var PlaNr = 78;
-var DivNr = 74;
-var FavNr = 34;
->>>>>>> 5760993 (Updated Photos)
 
 // Det var det :)
 
