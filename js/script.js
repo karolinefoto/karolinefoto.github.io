@@ -5,12 +5,12 @@
 // Når du legg til eit nytt bilde, følger du det eksisterande namnemønsteret t.d. dyr057 for det 57ande bildet i kategorien dyr.
 //
 // SKRIV TALET PÅ BILDER I KVAR KATEGORI
-var DyrNr = 67;
-var PorNr = 3;
-var LanNr = 44;
-var PlaNr = 78;
-var DivNr = 74;
-var FavNr = 32;
+var DyrNr = 89;
+var PorNr = 18;
+var LanNr = 84;
+var PlaNr = 130;
+var DivNr = 95;
+var FavNr = 44;
 
 // Det var det :)
 
