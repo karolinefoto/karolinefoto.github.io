@@ -6,13 +6,17 @@
 //
 // SKRIV TALET PÅ BILDER I KVAR KATEGORI
 var DyrNr = 67;
-var PorNr = 17;
+var PorNr = 3;
 var LanNr = 44;
 var PlaNr = 78;
 var DivNr = 74;
-var FavNr = 34;
+var FavNr = 32;
 
 // Det var det :)
+
+const el = document.querySelector('img');
+const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
+observer.observe();
 
 function activeButtons() {
   //Make buttons active
@@ -105,40 +109,54 @@ function clickImage() {
 }
 */
 
+function homePage() {
+
+}
+
+
 function imageViewer(inputImage) {
   document.addEventListener("keyup", keyPress);
   var viewer = document.createElement('div');
-  var buttonBox = document.createElement('div');
+  // var buttonBox = document.createElement('div');
   var button1 = document.createElement('button');
   var button2 = document.createElement('button');
   var button3 = document.createElement('button');
   var imageView = document.createElement('div');
   var imageViewChild = document.createElement('img');
   viewer.setAttribute("id", "viewer");
-  buttonBox.setAttribute("id", "button-box");
+  // buttonBox.setAttribute("id", "button-box");
   button1.setAttribute("id", "viewer-prev");
   button1.setAttribute("onclick", "prevImage();");
-  button1.innerHTML = 'Forrige';
+  button1.innerHTML = '';
   button2.setAttribute("id", "viewer-close");
   button2.setAttribute("onclick", "closeViewer();");
-  button2.innerHTML = 'X';
+  button2.innerHTML = '×';
   button3.setAttribute("id", "viewer-next");
   button3.setAttribute("onclick", "nextImage();");
-  button3.innerHTML = 'Neste';
+  button3.innerHTML = '';
+  var button1Icon = document.createElement('img');
+  var button3Icon = document.createElement('img');
+  button1Icon.src = '../images/left-arrow-1-white.png';
+  button3Icon.src = '../images/right-arrow-1-white.png';
+  button1.appendChild(button1Icon);
+  button3.appendChild(button3Icon);
+
   imageView.setAttribute("id", "image-view");
   imageViewChild.setAttribute("id", "image-viewer-child");
   imageViewChild.setAttribute("src", inputImage);
   document.body.appendChild(viewer);
   document.getElementById("viewer").appendChild(imageView);
   document.getElementById("image-view").appendChild(imageViewChild);
-  document.getElementById("viewer").appendChild(buttonBox);
-  document.getElementById("button-box").appendChild(button1);
-  document.getElementById("button-box").appendChild(button2);
-  document.getElementById("button-box").appendChild(button3);
+  // document.getElementById("viewer").appendChild(buttonBox);
+  // document.getElementById("button-box").appendChild(button1);
+  // document.getElementById("button-box").appendChild(button2);
+  // document.getElementById("button-box").appendChild(button3);
+  document.getElementById("viewer").appendChild(button1);
+  document.getElementById("viewer").appendChild(button2);
+  document.getElementById("viewer").appendChild(button3);
   body.setAttribute("class", "no-scroll");
   var viewerObj = document.getElementById("viewer");
   viewerObj.focus();
-
 }
 
 function closeViewer() {
@@ -351,6 +369,54 @@ function toggleMenu() {
   }
 }
 
+function categoryChange() {
+  const category_switcher = document.getElementById("category");
+  let cat = category_switcher.options.selectedIndex;
+  switch(cat) {
+    case 0:
+      showAll();
+      setCurrentCategory('all');
+      oki();
+      break;
+      
+    case 1:
+      show('fav', FavNr);
+      setCurrentCategory('fav');
+      oki();
+      break;
+    
+    case 2:
+      show('dyr', DyrNr);
+      setCurrentCategory('dyr');
+      oki();
+      break;
+      
+    case 3:
+      show('por', PorNr);
+      setCurrentCategory('por');
+      oki();
+      break;
+      
+    case 4:
+      show('lan', LanNr);
+      setCurrentCategory('lan');
+      oki();
+      break;
+      
+    case 5:
+      show('pla', PlaNr);
+      setCurrentCategory('pla');
+      oki();
+      break;
+      
+    case 6:
+      show('div', DivNr);
+      setCurrentCategory('div');
+      oki();
+      break;
+  }
+}
+
 function agreeToCookies() {
   localStorage.setItem('hasSeenCookieWarning', 'yes');
   document.getElementById("cookie-warning-box").style.display="none";
@@ -372,11 +438,62 @@ function hideKontaktForm() {
 
 function oki() {
   document.getElementById("welcome").style.top="-100vh";
-  localStorage.setItem('hasBeenWelcomed', 'yes');
+  // localStorage.setItem('hasBeenWelcomed', 'yes');
+
+}
+
+function okidoki() {
+  document.getElementById("hbtn-0").className = document.getElementById("hbtn-0").className.replace(" active-header-button", "");
+  document.getElementById("hbtn-1").className = document.getElementById("hbtn-1").className += " active-header-button";
+}
+
+function nvm() {
+  document.getElementById("welcome").style.top="0vh";
+  // localStorage.setItem('hasBeenWelcomed', 'yes');
 }
 
 function checkWelcome() {
   if (localStorage.getItem('hasBeenWelcomed') !== 'yes') {
-    document.getElementById("welcome").style.display="grid";
+    // document.getElementById("welcome").style.display="grid";
   }
 }
+
+function runCarousel() {
+  carousel = document.getElementsByClassName("carousel");
+  slides = carousel[0].getElementsByClassName("carousel-slide");
+  for (let i = 0; i < slides.length; i++) {
+    console.log(slides[i].className);
+    if (slides[i].className.includes(" carousel-slide--1")) {
+      console.log("found carousel-slide--1");
+      slides[i].className = slides[i].className.replace(" carousel-slide--1", " carousel-slide-0");
+    }
+    else if (slides[i].className.includes(" carousel-slide-0")) {
+      console.log("found carousel-slide-0");
+      slides[i].className = slides[i].className.replace(" carousel-slide-0", " carousel-slide-1");
+    }
+    else if (slides[i].className.includes(" carousel-slide-1")) {
+      console.log("found carousel-slide-1");
+      slides[i].className = slides[i].className.replace(" carousel-slide-1", " carousel-slide-2");
+    }
+    else if (slides[i].className.includes(" carousel-slide-2")) {
+      console.log("found carousel-slide-2");
+      slides[i].className = slides[i].className.replace(" carousel-slide-2", " carousel-slide-3");
+    }
+    else if (slides[i].className.includes(" carousel-slide-3")) {
+      console.log("found carousel-slide-3");
+      slides[i].className = slides[i].className.replace(" carousel-slide-3", " carousel-slide-4");
+    }
+    else if (slides[i].className.includes(" carousel-slide-4")) {
+      console.log("found carousel-slide-4");
+      slides[i].className = slides[i].className.replace(" carousel-slide-4", " carousel-slide-5");
+    }
+    else if (slides[i].className.includes(" carousel-slide-5")) {
+      console.log("found carousel-slide-5");
+      slides[i].className = slides[i].className.replace(" carousel-slide-5", " carousel-slide--1");
+    }
+    else {
+      console.log("no match");
+    }
+  }
+}
+let runningCarousel = window.setInterval(runCarousel, 5000)
