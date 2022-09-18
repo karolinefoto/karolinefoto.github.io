@@ -1,0 +1,42 @@
+#about-grid {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  grid-area: main/main/sidebar/sidebar;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  padding-top: 20px;
+}
+
+.about-picture {
+  width: 40vw;
+  height: 40vw;
+  min-width: 240px;
+  min-height: 240px;
+  max-width: 440px;
+  max-height: 440px;
+  margin: 6px;
+  /*box-shadow: black 0 2px 2px;*/
+  border-radius: 4px;
+}
+
+.about-text {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h2.about-text {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2em;
+}
+
+p.about-text {
+  font-family: 'Average-Sans', sans-serif;
+  font-size: 1em;
+}
+
+.about-link {
+  color: #21cacb;
+}
