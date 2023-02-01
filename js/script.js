@@ -7,10 +7,10 @@
 // SKRIV TALET PÅ BILDER I KVAR KATEGORI
 var DyrNr = 93;
 var PorNr = 18;
-var LanNr = 86;
+var LanNr = 88;
 var PlaNr = 134;
 var DivNr = 99;
-var FavNr = 45;
+var FavNr = 46;
 
 // Det var det :)
 
