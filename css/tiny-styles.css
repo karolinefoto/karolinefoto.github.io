@@ -119,6 +119,7 @@ li {
   vertical-align: middle;
   color: #ffffff;
   background: none;
+  backdrop-filter: brightness(0.9);
   border-top: solid transparent 4px;
   border-bottom: solid white 4px;
   border-left: solid transparent 4px;
@@ -350,9 +351,14 @@ nav {
 }
 
 .photo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   margin: 6px 6px;
   width: calc(100% - 12px);
   height: auto;
+  aspect-ratio: 1;
   /* background: hsla(0, 0%, 100%, 1);*/
   background: #242424;
   border-radius: 4px;
@@ -369,13 +375,17 @@ nav {
 }
 
 .photo-box:hover {
-  border: black 2px;
+  filter: brightness(1.1);
   transition-duration: 200ms;
 }
 
 .photo {
   display: block;
-  width: 100%;
+  flex-shrink: 0;
+  max-width: 150%;
+  max-height: 150%;
+  background-size: cover;
+  transition-duration: 200ms;
 }
 
 .top-padding {

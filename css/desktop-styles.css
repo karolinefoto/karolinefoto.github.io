@@ -60,6 +60,17 @@ h3 {
   font-family: 'Exo 2', sans-serif;
 }
 
+h4 {
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 4px;
+  margin-left: 0;
+  font-size: 32px;
+  line-height: 32px;
+  font-family: 'Exo 2', sans-serif;
+}
+
 h6 {
   padding: 0px;
   padding-left: 0px;
@@ -74,6 +85,7 @@ p {
   padding-left: 0px;
   padding-right: 0px;
   margin: 0px;
+  margin-left: 2px;
   font-size: 24px;
   font-family: 'Average', serif;
 }
@@ -111,8 +123,35 @@ li {
   display: inline;
 }
 
-#category, #category-btn-0 {
+#category {
   display: none;
+  height: 54px;
+  width: 120px;
+  top: 12px;
+  left: 12px;
+  vertical-align: middle;
+  color: #ffffff;
+  background: none;
+  backdrop-filter: brightness(0.9);
+  border-top: solid transparent 4px;
+  border-bottom: solid white 4px;
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-radius: 4px;
+  font-family: 'Exo 2', sans-serif;
+  padding: 0 4px;
+  text-align: center;
+}
+
+#category:hover {
+  border: #fff7 solid 4px;
+  border-bottom: #fff solid 4px;
+  outline: 0;
+  cursor: pointer;
+}
+
+#category:active {
+  border: white solid 4px;
 }
 
 #top-buttons {
@@ -146,6 +185,47 @@ nav {
   display: inline-block;
 }
 
+@media screen and (min-width: 641px) {
+  #header-text {
+    display: inline-block;
+  }
+  #header-logo {
+    height: 60px;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #header-text {
+    display: none;
+  }
+  #header-logo {
+    height: 60px;
+    display: inline-block;
+    margin: 8px;
+  }
+  p.welcome-message {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  p.welcome-message {
+    display: none;
+  }
+  #welcome {
+    grid-template-rows: 110px 50vh 20px 60px 20px 50px auto !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  h2.welcome-message {
+    font-size: 30px !important;
+  }
+  p.welcome-message {
+    font-size: 22px !important;
+  }
+}
 
 
 #photos {
@@ -153,7 +233,7 @@ nav {
   display: flex;
   /*position: fixed;*/
   height: auto;
-  min-height: 100px;
+  min-height: 0;
   background: #242424;
   border: 6px;
   flex-flow: row wrap;
@@ -163,42 +243,24 @@ nav {
   margin: 6px;
 }
 
-.column {
-  flex: 25%;
-  max-width: 25%;
+
+#photos-view {
+  flex: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
+#collections-view {
+  flex: 100%;
+  max-width: 100%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-@media (max-width: 1200px) {
-  .column
-  {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-@media (max-width: 800px) {
-  .column
-  {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
 #viewer {
-  /* display: flex;
-  position: fixed;
-  top: 78px;
-  left: 0px;
-  right: 0px;
-  height: 100%;
-  min-height: 600px;
-  background-color: hsla(0, 0%, 0%, 0.97);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   display: grid;
   position: fixed;
   top: 0px;
@@ -216,8 +278,6 @@ nav {
   grid-area: header/header/main/sidebar;
   z-index: 11;
 }
-
-
 
 #background {
   filter: blur(4px);
@@ -293,11 +353,15 @@ nav {
 }
 
 .photo-box {
-  margin: 6px 6px;
-  width: calc(100% - 12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 6px;
+  width: calc(20% - 12px);
   height: auto;
-  /* background: hsla(0, 0%, 100%, 1);*/
-  background: #242424;
+  aspect-ratio: 1;
+  background-color: #111111;
   border-radius: 4px;
   color: black;
   overflow: hidden;
@@ -307,18 +371,80 @@ nav {
   cursor: pointer;
 }
 
+@media (max-width: 1680px) {
+  .photo-box {
+    width: calc(25% - 12px);
+  }
+}
+
+@media (max-width: 1306px) {
+  .photo-box {
+    width: calc(33.3% - 12px);
+  }
+}
+
+@media (max-width: 800px) {
+  .photo-box {
+    width: calc(50% - 12px);
+  }
+
+  #hbtn-0 {
+    display: none;
+  }
+
+  #hbtn-8 {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+@media (max-width: 500px) {
+  .photo-box {
+    width: calc(100% - 12px);
+  }
+}
+
 .photo-box:focus {
   transition-duration: 200ms;
 }
 
 .photo-box:hover {
-  border: black 2px;
+  filter: brightness(1.1);
   transition-duration: 200ms;
 }
 
 .photo {
   display: block;
+  flex-shrink: 0;
+  max-width: 150%;
+  max-height: 150%;
+  background-size: cover;
+  transition-duration: 200ms;
+}
+
+.collection-box {
+  display: flex;
+  flex-flow: row wrap;
   width: 100%;
+}
+
+hr {
+  width: calc(100% - 16px);
+  margin: 20px 8px;
+  height: 1px;
+  background-color: #999999;
+}
+
+/* .collection-box > .photo-box {
+  width: calc(25% - 12px);
+} */
+
+.collection-header {
+  margin-left: 20px;
+}
+
+.collection-text {
+  margin-left: 25px;
 }
 
 .top-padding {
@@ -404,14 +530,34 @@ nav {
   left: 12px;
   vertical-align: middle;
   color: #ffffff;
+  backdrop-filter: brightness(0.9);
   border-top: solid transparent 4px;
   border-bottom: solid transparent 4px;
 }
 
+@media (max-width: 1306px) {
+  #hbtn-1, #hbtn-2, #hbtn-3, #hbtn-4, #hbtn-5, #hbtn-6, #hbtn-7 {
+    display: none;
+  }
+  #category {
+    display: inline-block;
+  }
+}
+
 .nav-home {
-  border-radius: 4px;
-  margin-right: 80px;
-  width: 150px;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-right: 0;
+  width: 120px;
+}
+
+.nav-collections {
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-right: 20px;
+  width: 120px;
 }
 
 #om-meg-picture {
@@ -443,7 +589,7 @@ button {
 }
 
 .active-header-button {
-  border-bottom: white solid 4px;
+  border-bottom: #fff solid 4px;
   height: 54px;
 }
 
@@ -453,19 +599,13 @@ button:focus {
 }
 
 button:active {
-  /* background: #ddd; */
-/*  border: none;*/
-  /* color: black; */
   border-color: #ccc !important;
   outline: 0;
-  /* filter: opacity(0.75) */
 }
 
 button:hover {
-/*  background: #93d2dc;*/
-/*  border: none;*/
-  border: white solid 4px;
-/*  color: black;*/
+  border: #fff7 solid 4px;
+  border-bottom: #fff solid 4px;
   outline: 0;
 }
 
@@ -885,6 +1025,12 @@ button:hover {
   overflow: visible;
 }
 
+@media (max-width: 800px) {
+  #welcome {
+    display: none;
+  }
+}
+
 .carousel {
   /* background: black; */
   height: 50vh;
@@ -1063,4 +1209,8 @@ button.welcome-message:hover {
 .welcome-test-button:hover {
   background-color: #21cacb;
   color: white;
+}
+
+.no-scroll {
+  overflow-y: hidden;
 }

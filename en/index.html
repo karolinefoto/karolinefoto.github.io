@@ -2,104 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <title>KarolineFoto</title>
-    <link rel="shortcut icon" href="../images/logo.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Average">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" media="screen and (max-width: 359px)" href="../css/tiny-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 360px) and (max-width: 1080px)" href="../css/phone-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 1081px)" href="../css/desktop-styles.css">
+    <title></title>
   </head>
-  <body id="body" onload="showAll(); activeButtons(); checkWelcome(); resetCurrentCategory();">
-    <div id="header" class="inline">
-      <div id="top-buttons">
-        <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="../images/sort.png" alt="..." class="three-streak-button-img"></button>
-        <button type="button" name="button" class="info-button" onclick="toggleSidebar();"><img src="../images/menu.png" alt="meny" class="info-button-img"></button>
-      </div>
-      <nav id="nav-top">
-        <ul id="nav-top-buttons"> <!-- navbuttons -->
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-left active-header-button" onclick="showAll(); setCurrentCategory('all');">All</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('fav', FavNr); setCurrentCategory('fav');">Favourites</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('dyr', DyrNr); setCurrentCategory('dyr');">Animals</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('por', PorNr); setCurrentCategory('por');">Portraits</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('lan', LanNr); setCurrentCategory('lan');">Landscapes</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-center" onclick="show('pla', PlaNr); setCurrentCategory('pla');">Plants & Woods</button></li>
-          <li class="li-navbar"><button type="button" name="button" class="header-button nav-right"  onclick="show('div', DivNr); setCurrentCategory('div');">Misc.</button></li>
-        </ul>
-      </nav>
-      <div id="logo"> <!-- logo -->
-        <img id="header-logo" src="../images/logo.png"><!--
-     --><div id="header-text">
-          <h1 class="header-title">KarolineFoto</h1>
-          <h3 class="header-subtitle lang-no">Hobbyphotographer</h3>
-        </div>
-      </div>
-    </div>
-    <div id="sidebar" class="phone-hidden"> <!-- The sideview containing additional content -->
-      <div id="sidebar-image">
-        <img id="om-meg-picture" src="../images/fotograf.jpg" alt="">
-      </div>
-      <div id="sidebar-links">
-        <div>
-          <a href="https://www.facebook.com/karolinefoto/"><div id="sidebar-link-fb"><img src="../images/f_logo_RGB-Blue_512.png" alt="FB"><div><h3>Facebook</h3></div></div></a>
-          <a href="https://www.instagram.com/hobbyfotograf_karolinefoto/"><div id="sidebar-link-ig"><div><h3>Instagram</h3></div><img src="../images/IG_round.png" alt="IG"></div></a>
-        </div>
-        <a href="kjøp.html"><div id="sidebar-link-kjøp"><img src="../images/buy.svg" alt="buy"><div><h3>Buy pictures or calendars</h3></div></div></a>
-        <a href="kontakt.html"><div id="sidebar-link-kontakt"><img src="../images/contact.svg" alt="contact"><div><h3>About me / Contact / <br> Give me feedback</h3></div></div></a>
-        <a href="faq.html"><div id="sidebar-link-faq"><img src="../images/faq.svg" alt="faq"><div><h3>Questions & Answers <br> Prices etc.</h3></div></div></a>
-        <a href="../no/index.html"><div id="sidebar-link-lang"><img class="img-height-30px" src="../images/flag-no.png" alt="english"><div><h3>Bytt til Norsk</h3></div></div></a>
-        <a href="../LICENSE.txt"><div id="sidebar-link-copyright"><img src="../images/filler.png" alt=""><div><h3>Copyright & reuse</h3></div></div></a>
-        <div><p>Photographies are protected under Copyright © 2022 Karoline Myskja & Daniel Svindseth Pettersen. All Rights Reserved. The rest of the website is licensed under the MIT License.</p></div>
-      </div>
-    </div>
-    <div id="photos"> <!-- The main view displaying the photos in a list -->
-      <div id="column1" class="column"></div>
-      <div id="column2" class="column"></div>
-      <div id="column3" class="column"></div>
-      <div id="column4" class="column"></div>
-    </div>
-    <div id="nav-menu-2" class="phone-hidden desktop-hidden">
-      <div id="nav-popup-menu">
-        <div class="nav-button-close-div">
-          <button type="button" name="button" class="nav-center nav-button-close" onclick="toggleMenu();">X</button>
-        </div>
-        <div class="">
-          <div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="show('dyr', DyrNr); setCurrentCategory('dyr');">Animals</button>
-          </div><!--
-       --><div class="nav-button-small">
-            <button type="button" name="button" class="header-button nav-center" onclick="show('por', PorNr); setCurrentCategory('por');">Portraits</button>
-          </div><!--
-       --><div class="nav-button-big">
-            <button type="button" name="button" class="header-button nav-center" onclick="showAll(); setCurrentCategory('all');">All</button>
-          </div>
-
-        </div>
-        <!--
-     --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="show('lan', LanNr); setCurrentCategory('lan');">Landscapes</button>
-        </div><!--
-     --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="show('pla', PlaNr); setCurrentCategory('pla');">Plants</button>
-        </div><!--
-     --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="show('div', DivNr); setCurrentCategory('div');">Misc.</button>
-        </div><!--
-     --><div class="nav-button-small">
-          <button type="button" name="button" class="header-button nav-center" onclick="show('fav', FavNr); setCurrentCategory('fav');">Favourites</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="welcome" style="display: none;">
-      <h2 class="welcome-message">Welcome to KarolineFoto!</h2>
-      <p class="welcome-message">The photos are taken by ourselves and are taken on a hobby-basis. I update the site once in a while when I have something new to share.</p>
-      <button class="welcome-message" onclick="oki();">Show me the photos!</button>
-    </div>
+  <body>
 
   </body>
-  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript">
+    window.location.href = "../no/index.html"
+  </script>
 </html>

@@ -9,21 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" media="screen and (max-width: 399px)" href="../css/tiny-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 400px) and (max-width: 1279px)" href="../css/phone-styles.css">
-    <link rel="stylesheet" media="screen and (min-width: 1280px)" href="../css/desktop-styles.css">
+    <!-- <link rel="stylesheet" media="screen and (max-width: 399px)" href="../css/tiny-styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 400px) and (max-width: 1305px)" href="../css/phone-styles.css"> -->
+    <!-- <link rel="stylesheet" media="screen and (min-width: 1306px)" href="../css/desktop-styles.css"> -->
+    <link rel="stylesheet" media="screen" href="../css/desktop-styles.css">
   </head>
   <body id="body" onload="showAll(); activeButtons(); checkCookies(); checkWelcome(); resetCurrentCategory();">
     <div id="header" class="inline">
-      <div id="top-buttons">
-        <button type="button" name="button" class="three-streak-button" onclick="toggleMenu();"><img src="../images/sort.png" alt="..." class="three-streak-button-img"></button>
-        <button type="button" name="button" class="info-button" onclick="toggleSidebar();"><img src="../images/menu.png" alt="meny" class="info-button-img"></button>
-      </div>
       <nav id="nav-top">
-
-
         <ul id="nav-top-buttons"> <!-- desktop navbuttons -->
-          <li class="li-navbar"><button type="button" name="hbtn-0" id="hbtn-0" class="header-button nav-home active-header-button" onclick="nvm(); setCurrentCategory('all');">Gå til Framsida</button></li>
+          <li class="li-navbar"><button type="button" name="hbtn-0" id="hbtn-0" class="header-button nav-home active-header-button" onclick="nvm(); setCurrentCategory('all');">Framsida</button></li>
+          <li class="li-navbar"><button type="button" name="hbtn-8" id="hbtn-8" class="header-button nav-collections" onclick="showCollections(); setCurrentCategory('col'); oki();">Samlingar</button></li>
           <li class="li-navbar"><button type="button" name="hbtn-1" id="hbtn-1" class="header-button nav-left" onclick="showAll(); setCurrentCategory('all'); oki();">Alle</button></li>
           <li class="li-navbar"><button type="button" name="hbtn-2" id="hbtn-2" class="header-button nav-center" onclick="show('fav', FavNr); setCurrentCategory('fav'); oki();">Favorittar</button></li>
           <li class="li-navbar"><button type="button" name="hbtn-3" id="hbtn-3" class="header-button nav-center" onclick="show('dyr', DyrNr); setCurrentCategory('dyr'); oki();">Dyr</button></li>
@@ -33,7 +29,7 @@
           <li class="li-navbar"><button type="button" name="hbtn-7" id="hbtn-7" class="header-button nav-right"  onclick="show('div', DivNr); setCurrentCategory('div'); oki();">Diverse</button></li>
         </ul>
         <div id="nav-mobile"> <!-- mobile navmenu -->
-          <button type="button" name="hbtn-0" id="category-btn-0" class="header-button nav-home active-header-button" onclick="nvm(); setCurrentCategory('all');">Gå til Framsida</button>
+          <!-- <button type="button" name="hbtn-0" id="category-btn-0" class="header-button nav-home active-header-button" onclick="nvm(); setCurrentCategory('all');">Gå til Framsida</button> -->
           <label for="category"></label>
           <select name="category" id="category" onchange="categoryChange();">
             <option id="op1" value="alle" selected>Alle</option>
@@ -45,7 +41,7 @@
             <option id="op7" value="diverse">Diverse</option>
           </select>
         </div>
-        
+
       </nav>
       <div id="logo"> <!-- logo -->
         <img id="header-logo" alt="KarolineFoto" src="../images/logo.png"><!--
@@ -57,21 +53,20 @@
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <div id="photos"> <!-- The main view displaying the photos in a list -->
-      <div id="column1" class="column"></div>
-      <div id="column2" class="column"></div>
-      <div id="column3" class="column"></div>
-      <div id="column4" class="column"></div>
+      <div id="photos-view"></div>
+
+      <div id="collections-view"></div>
     </div>
     <div id="sidebar" class="phone-hidden"> <!-- The sideview containing additional content -->
       <div id="sidebar-small-links">
         <a href="https://www.facebook.com/karolinefoto/" class="sidebar-small-link" title="Besøk Karolinefoto på Facebook"><img src="../images/f_logo_RGB-Blue_512.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/hobbyfotograf_karolinefoto/" class="sidebar-small-link" title="Besøk Karolinefoto på Instagram"><img src="../images/IG_round.png" alt="Instagram"></a>
+        <!--<a href="https://www.instagram.com/hobbyfotograf_karolinefoto/" class="sidebar-small-link" title="Besøk Karolinefoto på Instagram"><img src="../images/IG_round.png" alt="Instagram"></a>-->
         <!--<a href="kjøp.html" class="sidebar-small-link" title="Kjøp bilete"><img src="../images/buy.svg" alt="Buy"></a>-->
         <a href="../LICENSE.txt" class="sidebar-small-link" title="Opphavsrett (Copyright ©)"><img src="../images/Copyright-Round.png" alt="©"></a>
         <a href="about.html" class="sidebar-small-link" title="Om oss"><img src="../images/Info-Round.png" alt="Om oss"></a>
       </div>
     </div>
-    
+
     <div id="cookie-warning-box" style="display: none;">
       <p>Denne Nettsida Brukar Cookies. <button type="button" name="ok" onclick="agreeToCookies();">Ok</button></p>
     </div>
@@ -91,7 +86,7 @@
       <p class="welcome-link-info">På sida finn du nyttige lenkjer, <br> der du m.a. kan lese om oss som står bak sida, <br> eller legge inn bestillingar for kopiar av bileta!</p>
       <img class="welcome-link-info" src="../images/up-arrow-1.png" alt="">
       <p class="welcome-header-info">Trykk på desse knappane for å vise bilete av ulike kategoriar</p>
-      <button class="welcome-message" onclick="oki(); okidoki();">Vis meg bilda!</button>
+      <button class="welcome-message" onclick="oki(); okidoki(); showAll();">Vis meg bilda!</button>
       <!-- <button class="welcome-test-button" onclick="runCarousel();">Køyr karusellen!</button> -->
     </div>
     <script type="text/javascript" src="../js/script.js"></script>
